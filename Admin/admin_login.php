@@ -5,7 +5,6 @@ session_start();
 
 if (isset($_POST['submit'])) {
 
-
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
 
@@ -35,7 +34,7 @@ if (isset($_POST['submit'])) {
   <meta name="viewport" content="width=, initial-scale=1.0">
   <title>login</title>
   <!-- font awesome cdn link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
   <!-- admin css file-->
   <link rel="stylesheet" href="../css/styleAdmin.css">
@@ -45,7 +44,7 @@ if (isset($_POST['submit'])) {
 <body>
 
 
- <!-- display and remove message -->
+  <!-- display and remove message -->
 
   <?php
   if (isset($message)) {
@@ -53,7 +52,7 @@ if (isset($_POST['submit'])) {
       echo '
     <div class="message">
       <span>' . $message . '</span>
-      <i class="fas fa times" onclick="this.parentElement.remove();"></i>
+      <i class="fa-solid fa-xmark onclick="this.parentElement.remove();"></i>
     </div>
     ';
     }
