@@ -50,33 +50,35 @@ if (isset($_POST['submit'])) {
   if (isset($message)) {
     foreach ($message as $message) {
       echo '
-    <div class="message">
-      <span>' . $message . '</span>
-      <i class="fa-solid fa-xmark onclick="this.parentElement.remove();"></i>
-    </div>
+
+      <div class="message">
+        <span>'.$message.'</span>
+        <i class="fa-solid fa-xmark" onclick="this.parentElement.remove();"></i>
+      </div>
+
     ';
     }
   }
   ?>
   <!-- admin login form -->
 
-  <section class="form-container">
+  <section class=" form-container">
 
-    <form action="" method="POST">
-      <h3>Login Now</h3>
-      <p>default username = <span>admin</span> & password = <span>111</span></p>
+      <form action="" method="POST">
+        <h3>Login Now</h3>
+        <p>default username = <span>admin</span> & password = <span>111</span></p>
 
-      <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+        <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+        <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="submit" value="Login" name="submit" class="btn">
+        <input type="submit" value="Login" name="submit" class="btn">
 
-    </form>
+      </form>
 
 
 
-  </section>
+      </section>
 
 
 
