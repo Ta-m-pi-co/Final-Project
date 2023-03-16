@@ -8,15 +8,15 @@ if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
 
-  $password = sha1($_POST['password']);
+  $password = $_POST['password'];
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
   $select_admin = $conn->prepare("SELECT * FROM `adminUsers` WHERE name = ? AND password = ?");
   $select_admin->execute([$name, $password]);
+  $row = $select_admin->fetch(PDO::FETCH_ASSOC);
 
   if ($select_admin->rowCount() > 0) {
-    $fetch_admin_id = $select_admin->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['admin_id'] = $fetch_admin_id['id'];
+    $_SESSION['admin_id'] = $row['id'];
     header('location:dashboard.php');
   } else {
     $message[] = 'Incorrect Username or Password! Try Again.';
