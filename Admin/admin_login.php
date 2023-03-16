@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
       echo '
 
       <div class="message">
-        <span>'.$message.'</span>
+        <span>' . $message . '</span>
         <i class="fa-solid fa-xmark" onclick="this.parentElement.remove();"></i>
       </div>
 
@@ -64,21 +64,21 @@ if (isset($_POST['submit'])) {
 
   <section class=" form-container">
 
-      <form action="" method="POST">
-        <h3>Login Now</h3>
-        <p>default username = <span>admin</span> & password = <span>111</span></p>
+    <form action="" method="POST">
+      <h3>Login Now</h3>
+      <p>default username = <span>admin</span> & password = <span>111</span></p>
 
-        <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-        <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-        <input type="submit" value="Login" name="submit" class="btn">
+      <input type="submit" value="Login" name="submit" class="btn">
 
-      </form>
+    </form>
 
 
 
-      </section>
+  </section>
 
 
 
