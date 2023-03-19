@@ -117,7 +117,7 @@ if (!isset($admin_id)) {
 
       <div class="box">
         <?php
-        $selectAdmins = $conn->prepare("SELECT * FROM `admins`");
+        $selectAdmins = $conn->prepare("SELECT * FROM `adminUsers`");
         $selectAdmins->execute();
         $numberOfAdmins = $selectAdmins->rowCount();
         ?>
