@@ -105,7 +105,7 @@ if (!isset($admin_id)) {
 
       <div class="box">
         <?php
-        $selectUsers - $conn->prepare("SELECT * FROM `users`");
+        $selectUsers = $conn->prepare("SELECT * FROM `users`");
         $selectUsers->execute();
         $numberOfUsers = $selectUsers->rowCount();
         ?>
@@ -117,7 +117,7 @@ if (!isset($admin_id)) {
 
       <div class="box">
         <?php
-        $selectAdmins - $conn->prepare("SELECT * FROM `admins`");
+        $selectAdmins = $conn->prepare("SELECT * FROM `admins`");
         $selectAdmins->execute();
         $numberOfAdmins = $selectAdmins->rowCount();
         ?>
@@ -129,7 +129,7 @@ if (!isset($admin_id)) {
 
       <div class="box">
         <?php
-        $selectMessages - $conn->prepare("SELECT * FROM `messages`");
+        $selectMessages = $conn->prepare("SELECT * FROM `messages`");
         $selectMessages->execute();
         $numberOfMessages = $selectMessages->rowCount();
         ?>
