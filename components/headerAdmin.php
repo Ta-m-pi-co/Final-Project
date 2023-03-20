@@ -13,10 +13,6 @@ if (isset($message)) {
 }
 ?>
 
-
-
-
-
 <header class="header">
 
 
@@ -36,8 +32,6 @@ if (isset($message)) {
     <div class="icons">
       <div id="menuBtn" class="fas fa-bars"></div>
       <div id="userBtn" class="fas fa-user"></div>
-
-
     </div>
 
     <div class="profile">
@@ -61,8 +55,6 @@ if (isset($message)) {
       </div>
 
       <a href="../components/logoutAdmin.php" class="deleteBtn">Logout</a>
-
-
 
     </div>
 
