@@ -272,6 +272,7 @@ color: var(--light-color);
   grid-template-columns: repeat(auto-fit, minmax(27rem,1fr));
   gap: 1.5rem;
   align-items: flex-start;
+  justify-content: center;
 }
 
  .dashboard .box-container .box{

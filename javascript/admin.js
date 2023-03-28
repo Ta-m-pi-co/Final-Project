@@ -21,18 +21,22 @@ window.onscroll = () =>{
 
 let navbar = document.querySelector('.header .flex .navbar');
 let profile = document.querySelector('.header .flex .profile');
+let menubtn = document.querySelector('#menuBtn')
+let userbtn = document.querySelector('#userBtn')
 
-document.querySelector('#menuBtn').onclick = () =>{
+menubtn.onclick = function() {
+  console.log('menuBtn clicked');
    navbar.classList.toggle('active');
    profile.classList.remove('active');
 }
 
-document.querySelector('#userBtn').onclick = () =>{
+userbtn.onclick = function(){
+  console.log('userBtn clicked');
    profile.classList.toggle('active');
    navbar.classList.remove('active');
 }
 
-window.onscroll = () =>{
+window.onscroll = function() {
    navbar.classList.remove('active');
    profile.classList.remove('active');
 }

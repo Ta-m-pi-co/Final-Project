@@ -30,9 +30,7 @@ if (!isset($admin_id)) {
 <body>
 
 
-  <?php
-  include '../components/headerAdmin.php'
-  ?>
+  <?php include '../components/headerAdmin.php'; ?>
 
   <section class="dashboard">
     <h1 class="heading">Dashboard</h1>
