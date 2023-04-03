@@ -7,7 +7,43 @@ $admin_id = $_SESSION['admin_id'];
 
 if (!isset($admin_id)) {
   header('location:admin_login.php');
+};
+
+
+if (isset($_POST['submit'])) {
+
+  $name = $_POST['name'];
+  $name = filter_var($name, FILTER_SANITIZE_STRING);
+
+  $password = $_POST['password'];
+  $password = filter_var($password, FILTER_SANITIZE_STRING);
+
+  $confirmPassword = $_POST['confirmPassword'];
+  $confirmPassword = filter_var($confirmPassword, FILTER_SANITIZE_STRING);
+
+  $email = $_POST['email'];
+  $email = filter_var($email, FILTER_SANITIZE_STRING);
+  
+  
+  $select_admin = $conn->prepare("SELECT * FROM `adminUsers` WHERE name = ?");
+  $select_admin->execute([$name]);
+  
+  if ($select_admin->rowCount() > 0) {
+    $message[] = 'username already exists';
+  } else {
+      if($password != $confirmPassword) {
+        $message[] = 'passwords do not match';
+  } else{
+    $insert_admin = $conn->prepare("INSERT INTO `adminUsers`(name, email, password) VALUES(?,?,?)");
+
+    $insert_admin->execute([$name, $email, $confirmPassword]);
+
+    $message[] = 'new admin created successfully';
+  }
+
 }
+}
+
 
 ?>
 
@@ -36,13 +72,17 @@ if (!isset($admin_id)) {
 
     <form action="" method="POST">
       <h3>Register</h3>
-      <p>default username = <span>admin</span> & password = <span>111</span></p>
+      <p>default username = <span>admin2</span> & password = <span>111</span></p>
 
       <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
+      <input type="email" name="email" maxlength="30" required placeholder="enter email" class="box" oninput="this.value = this.value.replace(/\s/g, '') " required>
+
       <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="submit" value="Login" name="submit" class="btn">
+      <input type="password" name="confirmPassword" maxlength="20" required placeholder="confirm password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+
+      <input type="submit" value="register" name="submit" class="btn">
 
     </form>
 
