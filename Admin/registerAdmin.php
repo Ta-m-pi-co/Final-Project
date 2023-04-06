@@ -23,25 +23,24 @@ if (isset($_POST['submit'])) {
 
   $email = $_POST['email'];
   $email = filter_var($email, FILTER_SANITIZE_STRING);
-  
-  
+
+
   $select_admin = $conn->prepare("SELECT * FROM `adminUsers` WHERE name = ?");
   $select_admin->execute([$name]);
-  
+
   if ($select_admin->rowCount() > 0) {
     $message[] = 'username already exists';
   } else {
-      if($password != $confirmPassword) {
-        $message[] = 'passwords do not match';
-  } else{
-    $insert_admin = $conn->prepare("INSERT INTO `adminUsers`(name, email, password) VALUES(?,?,?)");
+    if ($password != $confirmPassword) {
+      $message[] = 'passwords do not match';
+    } else {
+      $insert_admin = $conn->prepare("INSERT INTO `adminUsers`(name, email, password) VALUES(?,?,?)");
 
-    $insert_admin->execute([$name, $email, $confirmPassword]);
+      $insert_admin->execute([$name, $email, $confirmPassword]);
 
-    $message[] = 'new admin created successfully';
+      $message[] = 'new admin created successfully';
+    }
   }
-
-}
 }
 
 
@@ -65,18 +64,17 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-<?php include '../components/headerAdmin.php'; ?>
- 
+  <?php include '../components/headerAdmin.php'; ?>
 
-<section class=" form-container">
+
+  <section class=" form-container">
 
     <form action="" method="POST">
       <h3>Register</h3>
-      <p>default username = <span>admin2</span> & password = <span>111</span></p>
 
       <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="email" name="email" maxlength="30" required placeholder="enter email" class="box" oninput="this.value = this.value.replace(/\s/g, '') " required>
+      <input type="email" name="email" maxlength="30" required placeholder="enter email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.value = this.value.replace(/\s/g, '') " required>
 
       <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
