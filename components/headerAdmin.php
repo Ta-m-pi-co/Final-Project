@@ -50,7 +50,8 @@ if (isset($message)) {
 
       <div class="flexBtn">
         <a href="admin_login.php" class="optionBtn">Login</a>
-        <a href="registerAdmin.php" class="optionBtn">Register</a>
+        
+        <!--<a href="registerAdmin.php" class="optionBtn">Register</a> -->
 
       </div>
 
