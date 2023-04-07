@@ -20,12 +20,12 @@ if (isset($_POST['submit'])) {
 
   //update admin password
   $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
-  $selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
+  //$selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
 
-  $selectOPassword->execute([$admin_id]);
-  $fetchPreviousPassword = $selectOPassword->fetch(PDO::FETCH_ASSOC);
+  //$selectOPassword->execute([$admin_id]);
+  //$fetchPreviousPassword = $selectOPassword->fetch(PDO::FETCH_ASSOC);
 
-  $previousPassword = $fetchPreviousPassword['cPassword'];
+  $previousPassword = $_POST['cPassword'];
 
   $oPassword = sha1($_POST['oPassword']);
   $oPassword = filter_var($oPassword, FILTER_SANITIZE_STRING);
