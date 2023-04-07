@@ -11,12 +11,15 @@ if (!isset($admin_id)) {
 
 if (isset($_POST['submit'])) {
 
+  //update username 
   $username = $_POST['name'];
   $username = filter_var($username, FILTER_SANITIZE_STRING);
+
   $updateUsername = $conn->prepare("UPDATE `adminUsers` SET name = ? WHERE id = ?");
   $updateUsername->execute([$username, $admin_id]);
 
-  $dumpPassword = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+  //update admin password
+  $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
   $selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
 
   $selectOPassword->execute([$admin_id]);
@@ -33,16 +36,16 @@ if (isset($_POST['submit'])) {
   $confirmnPassword = sha1($_POST['confirmnPassword']);
   $confirmnPassword =filter_var($confirmnPassword, FILTER_SANITIZE_STRING);
 
-  if($oPassword == $dumpPassword){
+  if($oPassword == $empty_pass){
     $message[] = 'enter old password';
   } elseif($oPassword != $previousPassword){
     $message[] = 'old password does not match';
   }elseif($nPassword != $confirmnPassword){
     $message[] = 'new password does not match'; 
   }else{
-    if($nPassword != $dumpPassword){
-      $updatePassword = $conn->prepare("UPDATE `adminUsers` SET password = ? WHERE id = ?");
-      $updatePassword->execute([$confirmnPassword, $admin_id]);
+    if($nPassword != $empty_pass){
+      $updateAdminPassword = $conn->prepare("UPDATE `adminUsers` SET password = ? WHERE id = ?");
+      $updateAdminPassword->execute([$confirmnPassword, $admin_id]);
       $message[] = "password changed";
     } else{
       $message[] = 'no new password entered';
@@ -82,11 +85,11 @@ if (isset($_POST['submit'])) {
     <form action="" method="POST">
       <h3>Update Account</h3>
 
-      <input type="hidden" name="cPassword" value="<?= $fetchProfile['password']; ?>">
+      <input type="hidden" name="cPassword" value="<?= $fetch_profile['password']; ?>">
 
       <input type="text" name="name" maxlength="20" placeholder="enter new admin username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name']; ?>" required>
 
-      <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
+      <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" >
 
       <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" >
 
