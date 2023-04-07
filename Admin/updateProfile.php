@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
   $updateUsername = $conn->prepare("UPDATE `adminUsers` SET name = ? WHERE id = ?");
   $updateUsername->execute([$username, $admin_id]);
 
-  $dumpPassword = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+  $dumpPassword = '123da39a3ee5e6b4b0d3255bfef95601890afd80709';
   $selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
 
   $selectOPassword->execute([$admin_id]);
@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
 
       <input type="hidden" name="cPassword" value="<?= $fetchProfile['password']; ?>">
 
-      <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value=" $fetchProfile['password'];" required>
+      <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<? $fetchProfile['name']; ?>" required>
 
       <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
 
