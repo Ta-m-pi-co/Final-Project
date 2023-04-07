@@ -27,13 +27,13 @@ if (isset($_POST['submit'])) {
 
   $pPassword = $_POST['pPassword'];
 
-  $oPassword = $_POST['oPassword'];
+  $oPassword = sha1($_POST['oPassword']);
   $oPassword = filter_var($oPassword, FILTER_SANITIZE_STRING);
 
-  $nPassword = $_POST['nPassword'];
+  $nPassword = sha1($_POST['nPassword']);
   $nPassword = filter_var($nPassword, FILTER_SANITIZE_STRING);
 
-  $confirmnPassword = $_POST['confirmnPassword'];
+  $confirmnPassword = sha1($_POST['confirmnPassword']);
   $confirmnPassword = filter_var($confirmnPassword, FILTER_SANITIZE_STRING);
 
   if ($oPassword == $empty_pass) {

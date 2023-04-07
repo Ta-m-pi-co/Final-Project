@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
 
-  $password = $_POST['password'];
+  $password = sha1($_POST['password']);
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
   $select_admin = $conn->prepare("SELECT * FROM `adminUsers` WHERE name = ? AND password = ?");

@@ -15,10 +15,10 @@ if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
 
-  $password = $_POST['password'];
+  $password = sha1($_POST['password']);
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-  $confirmPassword = $_POST['confirmPassword'];
+  $confirmPassword = sha1($_POST['confirmPassword']);
   $confirmPassword = filter_var($confirmPassword, FILTER_SANITIZE_STRING);
 
   $email = $_POST['email'];
