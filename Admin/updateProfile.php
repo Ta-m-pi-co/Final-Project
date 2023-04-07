@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
   $updateUsername = $conn->prepare("UPDATE `adminUsers` SET name = ? WHERE id = ?");
   $updateUsername->execute([$username, $admin_id]);
 
-  $dumpPassword = '123da39a3ee5e6b4b0d3255bfef95601890afd80709';
+  $dumpPassword = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
   $selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
 
   $selectOPassword->execute([$admin_id]);
