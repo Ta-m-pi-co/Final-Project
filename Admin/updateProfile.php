@@ -27,13 +27,13 @@ if (isset($_POST['submit'])) {
 
   $pPassword = $_POST['pPassword'];
 
-  $oPassword = sha1($_POST['oPassword']);
+  $oPassword = $_POST['oPassword'];
   $oPassword = filter_var($oPassword, FILTER_SANITIZE_STRING);
 
-  $nPassword = sha1($_POST['nPassword']);
+  $nPassword = $_POST['nPassword'];
   $nPassword = filter_var($nPassword, FILTER_SANITIZE_STRING);
 
-  $confirmnPassword = sha1($_POST['confirmnPassword']);
+  $confirmnPassword = $_POST['confirmnPassword'];
   $confirmnPassword = filter_var($confirmnPassword, FILTER_SANITIZE_STRING);
 
   if ($oPassword == $empty_pass) {
@@ -45,7 +45,6 @@ if (isset($_POST['submit'])) {
   } */ elseif ($nPassword != $confirmnPassword) {
 
     $message[] = 'new password does not match';
-
   } else {
 
     if ($nPassword != $empty_pass) {
@@ -55,7 +54,6 @@ if (isset($_POST['submit'])) {
       $updateAdminPassword->execute([$confirmnPassword, $admin_id]);
 
       $message[] = "password changed";
-
     } else {
 
       $message[] = 'no new password entered';
@@ -92,7 +90,7 @@ if (isset($_POST['submit'])) {
       <h3>Update Account</h3>
 
       <input type="hidden" name="pPassword" value="<?= $fetch_profile['password']; ?>">
-    
+
 
       <input type="text" name="name" maxlength="20" placeholder="enter new admin username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name']; ?>" required>
 
