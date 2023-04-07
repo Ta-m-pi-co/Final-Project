@@ -38,11 +38,11 @@ if (isset($_POST['submit'])) {
 
   if ($oPassword == $empty_pass) {
     $message[] = 'enter old password';
-  } elseif ($oPassword != $pPassword) {
+  } /*elseif ($oPassword != $pPassword) {
 
     $message[] = 'old password does not match';
 
-  } elseif ($nPassword != $confirmnPassword) {
+  } */ elseif ($nPassword != $confirmnPassword) {
 
     $message[] = 'new password does not match';
 
