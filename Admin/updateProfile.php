@@ -12,7 +12,7 @@ if (!isset($admin_id)) {
 if (isset($_POST['submit'])) {
 
   $username = $_POST['name'];
-  $username = filter_var($name, FILTER_SANITIZE_STRING);
+  $username = filter_var($username, FILTER_SANITIZE_STRING);
   $updateUsername = $conn->prepare("UPDATE `adminUsers` SET name = ? WHERE id = ?");
   $updateUsername->execute([$username, $admin_id]);
 
