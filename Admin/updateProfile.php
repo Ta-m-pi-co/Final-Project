@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
 
       <input type="hidden" name="cPassword" value="<?= $fetchProfile['password']; ?>">
 
-      <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<? $fetchProfile['name']; ?>" required>
+      <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name']; ?>" required>
 
       <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
 
