@@ -24,37 +24,33 @@ if (isset($_POST['submit'])) {
 
   $selectOPassword->execute([$admin_id]);
   $fetchPreviousPassword = $selectOPassword->fetch(PDO::FETCH_ASSOC);
-  
-  $previousPassword = $fetchPreviousPassword['password'];
+
+  $previousPassword = $fetchPreviousPassword['cPassword'];
 
   $oPassword = sha1($_POST['oPassword']);
-  $oPassword =filter_var($oPassword, FILTER_SANITIZE_STRING);
+  $oPassword = filter_var($oPassword, FILTER_SANITIZE_STRING);
 
   $nPassword = sha1($_POST['nPassword']);
-  $nPassword =filter_var($nPassword, FILTER_SANITIZE_STRING);
- 
-  $confirmnPassword = sha1($_POST['confirmnPassword']);
-  $confirmnPassword =filter_var($confirmnPassword, FILTER_SANITIZE_STRING);
+  $nPassword = filter_var($nPassword, FILTER_SANITIZE_STRING);
 
-  if($oPassword == $empty_pass){
+  $confirmnPassword = sha1($_POST['confirmnPassword']);
+  $confirmnPassword = filter_var($confirmnPassword, FILTER_SANITIZE_STRING);
+
+  if ($oPassword == $empty_pass) {
     $message[] = 'enter old password';
-  } elseif($oPassword != $previousPassword){
+  } elseif ($oPassword != $previousPassword) {
     $message[] = 'old password does not match';
-  }elseif($nPassword != $confirmnPassword){
-    $message[] = 'new password does not match'; 
-  }else{
-    if($nPassword != $empty_pass){
+  } elseif ($nPassword != $confirmnPassword) {
+    $message[] = 'new password does not match';
+  } else {
+    if ($nPassword != $empty_pass) {
       $updateAdminPassword = $conn->prepare("UPDATE `adminUsers` SET password = ? WHERE id = ?");
       $updateAdminPassword->execute([$confirmnPassword, $admin_id]);
       $message[] = "password changed";
-    } else{
+    } else {
       $message[] = 'no new password entered';
     }
   }
-
-
-
-
 }
 
 
@@ -89,11 +85,11 @@ if (isset($_POST['submit'])) {
 
       <input type="text" name="name" maxlength="20" placeholder="enter new admin username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name']; ?>" required>
 
-      <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" >
+      <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" >
+      <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="password" name="confirmnPassword" maxlength="20" placeholder="confirm new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" >
+      <input type="password" name="confirmnPassword" maxlength="20" placeholder="confirm new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
       <input type="submit" value="Update" name="submit" class="btn">
 
