@@ -58,8 +58,6 @@ if (isset($_POST['submit'])) {
 
       <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value=" $fetchProfile['password'];" required>
 
-      <input type="email" name="email" maxlength="30" required placeholder="enter email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.value = this.value.replace(/\s/g, '') " required>
-
       <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
 
       <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
