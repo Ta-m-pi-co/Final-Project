@@ -23,9 +23,9 @@ if (isset($_POST['submit'])) {
   //$selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
 
   //$selectOPassword->execute([$admin_id]);
-  //$fetchPreviousPassword = $selectOPassword->fetch(PDO::FETCH_ASSOC);
+  //$fetchpPassword = $selectOPassword->fetch(PDO::FETCH_ASSOC);
 
-  $previousPassword = $_POST['cPassword'];
+  $pPassword = $_POST['pPassword'];
 
   $oPassword = sha1($_POST['oPassword']);
   $oPassword = filter_var($oPassword, FILTER_SANITIZE_STRING);
@@ -38,16 +38,26 @@ if (isset($_POST['submit'])) {
 
   if ($oPassword == $empty_pass) {
     $message[] = 'enter old password';
-  } elseif ($oPassword != $previousPassword) {
+  } elseif ($oPassword != $pPassword) {
+
     $message[] = 'old password does not match';
+
   } elseif ($nPassword != $confirmnPassword) {
+
     $message[] = 'new password does not match';
+
   } else {
+
     if ($nPassword != $empty_pass) {
+
       $updateAdminPassword = $conn->prepare("UPDATE `adminUsers` SET password = ? WHERE id = ?");
+
       $updateAdminPassword->execute([$confirmnPassword, $admin_id]);
+
       $message[] = "password changed";
+
     } else {
+
       $message[] = 'no new password entered';
     }
   }
@@ -81,11 +91,12 @@ if (isset($_POST['submit'])) {
     <form action="" method="POST">
       <h3>Update Account</h3>
 
-      <input type="hidden" name="cPassword" value="<?= $fetch_profile['password']; ?>">
+      <input type="hidden" name="pPassword" value="<?= $fetch_profile['password']; ?>">
+    
 
       <input type="text" name="name" maxlength="20" placeholder="enter new admin username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name']; ?>" required>
 
-      <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="oPassword" maxlength="20" placeholder="enter old password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
       <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
