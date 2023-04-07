@@ -49,9 +49,9 @@ if (isset($message)) {
       <a href="updateProfile.php" class="btn">Update Profile</a>
 
       <div class="flexBtn">
-        <a href="admin_login.php" class="optionBtn">Login</a>
-        
-        <!--<a href="registerAdmin.php" class="optionBtn">Register</a> -->
+        <!-- <a href="admin_login.php" class="optionBtn">Login</a> -->
+
+        <a href="registerAdmin.php" class="optionBtn">Register</a>
 
       </div>
 
