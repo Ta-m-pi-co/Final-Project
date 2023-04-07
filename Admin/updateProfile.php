@@ -9,6 +9,24 @@ if (!isset($admin_id)) {
   header('location:admin_login.php');
 }
 
+if (isset($_POST['submit'])) {
+
+  $username = $_POST['name'];
+  $username = filter_var($name, FILTER_SANITIZE_STRING);
+  $updateUsername = $conn->prepare("UPDATE `adminUsers` SET name = ? WHERE id = ?");
+  $updateUsername->execute([$username, $admin_id]);
+
+  $dumpPassword = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+  $selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
+
+  $selectOPassword->execute([$admin_id]);
+  $fetchPreviousPassword = $selectOPassword->fetch(PDO::FETCH_ASSOC);
+  echo $previousPassword = $fetchPreviousPassword['password'];
+
+  echo sha1('');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +47,30 @@ if (!isset($admin_id)) {
 
 <body>
 
+  <?php include '../components/headerAdmin.php'; ?>
 
- 
+  <section class=" form-container">
+
+    <form action="" method="POST">
+      <h3>Update Account</h3>
+
+      <input type="hidden" name="cPassword" value="<?= $fetchProfile['password']; ?>">
+
+      <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value=" $fetchProfile['password'];" required>
+
+      <input type="email" name="email" maxlength="30" required placeholder="enter email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.value = this.value.replace(/\s/g, '') " required>
+
+      <input type="password" name="oPassword" maxlength="20" placeholder="enter current password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
+
+      <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
+
+      <input type="password" name="confirmnPassword" maxlength="20" placeholder="confirm new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
+
+      <input type="submit" value="Update" name="submit" class="btn">
+
+    </form>
+
+  </section>
 
 
 

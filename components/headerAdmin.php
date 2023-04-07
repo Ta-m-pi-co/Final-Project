@@ -54,7 +54,7 @@ if (isset($message)) {
 
       </div>
 
-      <a href="../components/logoutAdmin.php" class="deleteBtn">Logout</a>
+      <a href="../components/logoutAdmin.php" onclick=" return confirm('Are you sure you want to logout?');" class="deleteBtn">Logout</a>
 
     </div>
 
