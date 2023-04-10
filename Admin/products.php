@@ -63,6 +63,30 @@ if (isset($_POST['confirmAddProduct'])) {
   }
 }
 
+if (isset($_GET['delete'])) {
+
+  $deleteId = $_GET['delete'];
+  $deleteProductImage = $conn->prepare("SELECT * FROM `products` WHERE id =?");
+  $deleteProductImage->execute([$deleteId]);
+  $fetchDeleteImage = $deleteProductImage->fetch(PDO::FETCH_ASSOC);
+  unlink('../images/' . $fetchDeleteImage['image1']);
+  unlink('../images/' . $fetchDeleteImage['image2']);
+  unlink('../images/' . $fetchDeleteImage['image3']);
+
+  $deleteProduct = $conn->prepare("DELETE FROM `products` WHERE id = ?");
+  $deleteProduct->execute([$deleteId]);
+
+  $deleteCart = $conn->prepare("DELETE FROM `cart` WHERE productID = ?");
+  $deleteCart->execute([$deleteId]);
+
+  $deleteWishlist = $conn->prepare("DELETE FROM `wishlist` WHERE productID = ?");
+  $deleteWishlist->execute([$deleteId]);
+
+  header('location:products.php');
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
