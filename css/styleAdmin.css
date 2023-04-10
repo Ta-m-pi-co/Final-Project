@@ -406,6 +406,68 @@ color: var(--light-color);
   color: var(--light-color);
 }
 
+/*update product*/
+.updateProduct form{
+  margin: 0 auto;
+  max-width: 50rem;
+  background-color: var(--white);
+  border-radius: .5rem; 
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 2rem; 
+}
+
+.updateProduct form .imageContainer .mainImage img{
+  height: 20rem;
+  width: 100%;
+  object-fit: contain;
+}
+
+.updateProduct form .imageContainer .subImages{
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.updateProduct form .imageContainer .subImages img{
+
+  height: 7rem;
+  width: 8rem;
+  object-fit: contain;
+  border: var(--border);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  transition: .2s linear;
+}
+
+.updateProduct form .imageContainer .subImages img:hover{
+  transform: scale(1.1);
+}
+
+.updateProduct form .box{
+  width: 100%;
+  background-color: var(--light-bg);
+  border: var(--border);
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: var(--black);
+  border-radius: 0.5rem;
+  margin-top: 1rem 0;
+}
+
+.updateProduct form textarea{
+  height: 15rem;
+  resize: none;
+}
+
+.updateProduct form span{
+  font-size: 1.7rem;
+  color:var(--black);
+  
+}
+
 /* media queries */
 
 @media (max-width:991px){
@@ -450,5 +512,11 @@ color: var(--light-color);
   }
   .heading{
     font-size: 3rem;
+  }
+
+  .displayProducts .box-container{
+
+    grid-template-columns: 1fr;
+  
   }
 }
