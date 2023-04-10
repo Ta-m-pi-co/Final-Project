@@ -126,7 +126,7 @@ if (isset($_POST['update'])) {
     $selectProducts->execute([$updateId]);
 
     if ($selectProducts->rowCount() > 0) {
-      while ($fetchProducts = $selectProducts->fetch(PDO::FETCH_ASSOC)) {
+      while ($fetchProducts = $displayProducts->fetch(PDO::FETCH_ASSOC)) {
     ?>
         <form action="" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="productId" value="<?= $fetchProducts['id']; ?>">
@@ -147,13 +147,13 @@ if (isset($_POST['update'])) {
           </div>
 
           <span>Update Product Name</span>
-          <input type="text" placeholder="enter name of product" class="box" name="name" maxlength="100" value="<?= $fetchProducts['name']; ?>" required>
+          <input type="text" placeholder="enter name of product" class="box" name="name" maxlength="100" value="<?= $fetchProducts['name']; ?>">
 
           <span>Update Product Price</span>
-          <input type="number" min="0" max="999999999" placeholder="enter price of product" class="box" name="price" onkeypress="if(this.value.length == 9) return false;" value="<?= $fetchProducts['price']; ?>" required>
+          <input type="number" min="0" max="999999999" placeholder="enter price of product" class="box" name="price" onkeypress="if(this.value.length == 9) return false;" value="<?= $fetchProducts['price']; ?>">
 
           <span>Update Product Details</span>
-          <textarea name="details" class="box" placeholder="enter product details here!" cols="30" rows="10" maxlength="500" value="<?= $fetchProducts['details']; ?>" required></textarea>
+          <textarea name="details" class="box" placeholder="enter product details here!" cols="30" rows="10" maxlength="500" value="<?= $fetchProducts['details']; ?>"></textarea>
 
           <span>Update Product Images</span>
           <input type="file" name="image1" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
