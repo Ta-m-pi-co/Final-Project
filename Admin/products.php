@@ -108,17 +108,17 @@ if (isset($_POST['confirmAddProduct'])) {
 
         <div class="iBoxes">
           <span>image 1 (required)</span>
-          <input type="file" name="image01" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+          <input type="file" name="image1" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
         </div>
 
         <div class="iBoxes">
           <span>image 2</span>
-          <input type="file" name="image02" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+          <input type="file" name="image2" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
         </div>
 
         <div class="iBoxes">
           <span>image 3</span>
-          <input type="file" name="image03" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+          <input type="file" name="image3" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
         </div>
 
         <div class="iBoxes">
