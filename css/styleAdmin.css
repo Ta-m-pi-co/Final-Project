@@ -311,7 +311,6 @@ color: var(--light-color);
 
 }
 
-
 /*Add product form*/
 .addProducts form{
   margin: 0 auto;
@@ -350,7 +349,7 @@ color: var(--light-color);
   color: var(--light-color);
 }
 
-.addProducts form .flex .iBoxes textarea {
+.addProducts form .flex .iBoxes textarea{
   height: 12rem;
 }
 

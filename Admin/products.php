@@ -88,13 +88,8 @@ if (isset($_POST['confirmAddProduct'])) {
   <!-- add products -->
 
   <section class="addProducts">
-
     <h1 class="heading">Add Product</h1>
-
-
     <form action="" method="POST" enctype="multipart/form-data">
-
-
       <div class="flex">
         <div class="iBoxes">
           <span>Product Name - REQUIRED</span>
