@@ -269,46 +269,7 @@ color: var(--light-color);
   display: inline-block;
 }
 
-/*Add product form*/
-.addProducts form{
-  margin: 0 auto;
-  max-width: 70rem;
-  background-color: var(--white);
-  border-radius: .5rem; 
-  box-shadow: var(--box-shadow);
-  border: var(--border);
-  padding: 2rem; 
-}
 
-.addProducts form .flex{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.7rem;
-}
-
-.addProducts form .flex .iBoxes{
-  flex: 1 1 40rem;
-}
-
-.addProducts form .flex .iBoxes .box{
-  width: 100%;
-  background-color: var(--light-bg);
-  border: var(--border);
-  padding: 1.4rem;
-  font-size: 1.8rem;
-  color: var(--black);
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-}
-
-.addProducts form .flex .iBoxes span{
-  font-size: 2rem;
-  color: var(--light-color);
-}
-
-.addProducts form .flex .iBoxes textarea{
-  height: 12rem;
-}
 
 /*Dashboard*/
  .dashboard .box-container{
@@ -351,7 +312,98 @@ color: var(--light-color);
 
 }
 
+/*Add product form*/
+.addProducts form{
+  margin: 0 auto;
+  max-width: 70rem;
+  background-color: var(--white);
+  border-radius: .5rem; 
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 2rem; 
+}
 
+.addProducts form .flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem;
+}
+
+.addProducts form .flex .iBoxes{
+  flex: 1 1 40rem;
+}
+
+.addProducts form .flex .iBoxes .box{
+  width: 100%;
+  background-color: var(--light-bg);
+  border: var(--border);
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: var(--black);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.addProducts form .flex .iBoxes span{
+  font-size: 2rem;
+  color: var(--light-color);
+}
+
+.addProducts form .flex .iBoxes textarea{
+  height: 12rem;
+}
+
+.empty {
+  border:var(--border);
+  border-radius:.5rem;
+  background-color: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+  text-transform: capitalize;
+  box-shadow: var(--box-shadow);
+}
+
+.displayProducts .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5 rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.displayProducts .box-container .box{
+  background-color: var(--white);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 1.5rem;
+}
+
+.displayProducts .box-container .box img{
+  width: 100%;
+  height: 20rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.displayProducts .box-container .box .name{
+  font-size: 2.1rem;
+  color: var(--black);
+}
+
+.displayProducts .box-container .box .price {
+  font-size: 2.5rem;
+  color:var(--main-color);
+  margin: .4rem 0;
+}
+
+.displayProducts .box-container .box .details{
+  line-height: 2;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
 
 /* media queries */
 

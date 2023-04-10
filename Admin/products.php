@@ -127,11 +127,49 @@ if (isset($_POST['confirmAddProduct'])) {
       </div>
     </form>
 
+  </section>
+
+  <section class="displayProducts">
+    <div class="box-container">
+
+      <?php
+      $displayProducts = $conn->prepare("SELECT * FROM `products`");
+      $displayProducts->execute();
+
+      if ($displayProducts->rowCount() > 0) {
+
+        while ($fetchProducts = $displayProducts->fetch(PDO::FETCH_ASSOC)) {
+
+      ?>
+
+          <div class="box">
+            <img src="../images/<?= $fetchProducts['image1']; ?>" alt="">
+            <div class="name"><?= $fetchProducts['name']; ?></div>
+            <div class="price">£<?= $fetchProducts['price']; ?>/-</div>
+            <div class="details"><?= $fetchProducts['details']; ?></div>
+            <div class="flexBtn"></div>
+            <a href="updateProduct.php?update=<?= $fetchProducts['id']; ?>" class="optionBtn">update products</a>
+            <a href="products.php?delete=<?= $fetchProducts['id']; ?>" class="deleteBtn" onclick="return confirm('delete this?')">delete product</a>
+          </div>
+      <?php
+        }
+      } else {
+        echo '<p class="empty">no products to display</p>';
+      }
+
+
+
+      ?>
+
+
+
+
+    </div>
+
 
 
 
   </section>
-
 
 
 
