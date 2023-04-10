@@ -30,7 +30,51 @@ if (!isset($admin_id)) {
 <body>
 
 
- 
+ <!-- add products -->
+
+<section class="addProducts">
+  <form action="" method="POST" enctype="multipart/form-data">
+    <div class="flex">
+      <div class="iBoxes">
+      <span>Product Name - REQUIRED</span>
+      <input type="text" placeholder="enter name of product" class="box" name="name" maxlength="100" required>
+    </div>
+
+    <div class="iBoxes">
+      <span>Price - REQUIRED</span>
+      <input type="number" min="0" max="999999999" placeholder="enter price of product" class="box" name="price" onkeypress="if(this.value.length == 9) return false;" required>
+    </div>
+
+    <div class="iBoxes">
+      <span>image 1 (required)</span>
+      <input type="file" name="image01" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+    </div>
+
+    <div class="iBoxes">
+      <span>image 2</span>
+      <input type="file" name="image02" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+    </div>
+
+    <div class="iBoxes">
+      <span>image 3</span>
+      <input type="file" name="image03" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+    </div>
+
+    <div class="iBoxes">
+      <span> product details</span>
+      <textarea name="details" class="box" placeholder="enter product details here!" cols="30" rows="10" maxlength="500" required></textarea>
+    </div>
+
+    <input type="submit" value="confirm" name="confirmAddProduct" class="btn">
+
+
+    </div>
+  </form>
+
+
+
+
+</section>
 
 
 
