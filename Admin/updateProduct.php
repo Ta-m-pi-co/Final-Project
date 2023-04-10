@@ -126,7 +126,7 @@ if (isset($_POST['update'])) {
     $selectProducts->execute([$updateId]);
 
     if ($selectProducts->rowCount() > 0) {
-      while ($fetchProducts = $displayProducts->fetch(PDO::FETCH_ASSOC)) {
+      while ($fetchProducts = $selectProducts->fetch(PDO::FETCH_ASSOC)) {
     ?>
         <form action="" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="productId" value="<?= $fetchProducts['id']; ?>">
