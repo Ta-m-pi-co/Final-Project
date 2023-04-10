@@ -269,6 +269,46 @@ color: var(--light-color);
   display: inline-block;
 }
 
+/*Add product form*/
+.addProducts form{
+  margin: 0 auto;
+  max-width: 70rem;
+  background-color: var(--white);
+  border-radius: .5rem; 
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 2rem; 
+}
+
+.addProducts form .flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem;
+}
+
+.addProducts form .flex .iBoxes{
+  flex: 1 1 40rem;
+}
+
+.addProducts form .flex .iBoxes .box{
+  width: 100%;
+  background-color: var(--light-bg);
+  border: var(--border);
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: var(--black);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.addProducts form .flex .iBoxes span{
+  font-size: 2rem;
+  color: var(--light-color);
+}
+
+.addProducts form .flex .iBoxes textarea{
+  height: 12rem;
+}
 
 /*Dashboard*/
  .dashboard .box-container{
@@ -311,47 +351,7 @@ color: var(--light-color);
 
 }
 
-/*Add product form*/
-.addProducts form{
-  margin: 0 auto;
-  max-width: 70rem;
-  background-color: var(--white);
-  border-radius: .5rem; 
-  box-shadow: var(--box-shadow);
-  border: var(--border);
-  padding: 2rem; 
 
-}
-
-.addProducts form .flex{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.7rem;
-}
-
-.addProducts form .flex .iBoxes{
-  flex: 1 1 40rem;
-}
-
-.addProducts form .flex .iBoxes .box{
-  width: 100%;
-  background-color: var(--light-bg);
-  border: var(--border);
-  padding: 1.4rem;
-  font-size: 1.8rem;
-  color: var(--black);
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-}
-
-.addProducts form .flex .iBoxes span{
-  font-size: 2rem;
-  color: var(--light-color);
-}
-
-.addProducts form .flex .iBoxes textarea{
-  height: 12rem;
-}
 
 /* media queries */
 
