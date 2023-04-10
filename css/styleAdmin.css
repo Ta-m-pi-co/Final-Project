@@ -3,7 +3,7 @@
 
 
 :root {
-  --main-color:#2A8DD5;
+  --main-color:#8857e4;
   --secondary-color: #D5722A;
   --black:#444;
   --white:#fff;
@@ -143,7 +143,7 @@ color: var(--light-color);
   background-color: var(--secondary-color);
 }
 
-.btn:hover
+.btn:hover,
 .deleteBtn:hover,
 .optionBtn:hover{
   background-color: var(--black);
@@ -223,7 +223,7 @@ color: var(--light-color);
 
 .header .flex .navbar a:hover {
   color: var(--main-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .header .flex .icons > *{
