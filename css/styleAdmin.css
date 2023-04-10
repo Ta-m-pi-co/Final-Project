@@ -353,6 +353,7 @@ color: var(--light-color);
   height: 12rem;
 }
 
+/*Display Products*/
 .empty {
   border:var(--border);
   border-radius:.5rem;
@@ -365,10 +366,10 @@ color: var(--light-color);
   box-shadow: var(--box-shadow);
 }
 
-.displayProducts .box-container {
+.displayProducts .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, 33rem);
-  gap: 1.5 rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: flex-start;
 }
@@ -394,14 +395,14 @@ color: var(--light-color);
 }
 
 .displayProducts .box-container .box .price {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color:var(--main-color);
   margin: .4rem 0;
 }
 
 .displayProducts .box-container .box .details{
-  line-height: 2;
-  font-size: 1.7rem;
+  line-height: 1.5;
+  font-size: 1.6rem;
   color: var(--light-color);
 }
 
