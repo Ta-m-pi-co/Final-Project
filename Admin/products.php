@@ -83,6 +83,7 @@ if (isset($_POST['confirmAddProduct'])) {
 
 <body>
 
+  <?php include '../components/headerAdmin.php'; ?>
 
   <!-- add products -->
 
