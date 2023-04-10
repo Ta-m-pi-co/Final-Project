@@ -75,6 +75,7 @@ section{
   min-height: 100vh;
 }
 
+/* form styles*/
 .form-container form{
   background-color: var(--white);
   border-radius: .5rem;
@@ -114,7 +115,7 @@ color: var(--light-color);
 
 }
 
-
+/*button styles*/
 .btn,
 .deleteBtn,
 .optionBtn{
@@ -154,6 +155,10 @@ color: var(--light-color);
   gap: 1rem;
 }
 
+#menuBtn{
+  display: none;
+}
+/*messages*/
 .message{
   position: sticky;
   top: 0;
@@ -185,6 +190,7 @@ color: var(--light-color);
 }
 
 
+/*Admin Header*/
 .header{
   position: sticky;
   top: 0; left: 0; right: 0;
@@ -263,10 +269,8 @@ color: var(--light-color);
   display: inline-block;
 }
 
-#menuBtn{
-  display: none;
-}
 
+/*Dashboard*/
  .dashboard .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(27rem,1fr));
@@ -307,6 +311,48 @@ color: var(--light-color);
 
 }
 
+
+/*Add product form*/
+.addProducts form{
+  margin: 0 auto;
+  max-width: 70rem;
+  background-color: var(--white);
+  border-radius: .5rem; 
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 2rem; 
+
+}
+
+.addProducts form .flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem;
+}
+
+.addProducts form .flex .iBoxes{
+  flex: 1 1 40rem;
+}
+
+.addProducts form .flex .iBoxes .box{
+  width: 100%;
+  background-color: var(--light-bg);
+  border: var(--border);
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: var(--black);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.addProducts form .flex .iBoxes span{
+  font-size: 2rem;
+  color: var(--light-color);
+}
+
+.addProducts form .flex .iBoxes textarea {
+  height: 12rem;
+}
 
 /* media queries */
 

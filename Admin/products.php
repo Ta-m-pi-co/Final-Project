@@ -7,6 +7,60 @@ $admin_id = $_SESSION['admin_id'];
 
 if (!isset($admin_id)) {
   header('location:admin_login.php');
+};
+
+if (isset($_POST['confirmAddProduct'])) {
+
+  $name = $_POST['name'];
+  $name = filter_var($name, FILTER_SANITIZE_STRING);
+
+  $price = $_POST['price'];
+  $price = filter_var($price, FILTER_SANITIZE_STRING);
+
+  $details = $_POST['details'];
+  $details = filter_var($details, FILTER_SANITIZE_STRING);
+
+  $image1 = $_FILES['image1']['name'];
+  $image1 = filter_var($image1, FILTER_SANITIZE_STRING);
+  $image1Size = $_FILES['image1']['size'];
+  $image1TmpName = $_FILES['image1']['tmp_name'];
+  $image1Folder = '../images/' . $image1;
+
+  $image2 = $_FILES['image2']['name'];
+  $image2 = filter_var($image2, FILTER_SANITIZE_STRING);
+  $image2Size = $_FILES['image2']['size'];
+  $image2TmpName = $_FILES['image2']['tmp_name'];
+  $image2Folder = '../images/' . $image2;
+
+  $image3 = $_FILES['image3']['name'];
+  $image3 = filter_var($image3, FILTER_SANITIZE_STRING);
+  $image3Size = $_FILES['image3']['size'];
+  $image3TmpName = $_FILES['image3']['tmp_name'];
+  $image3Folder = '../images/' . $image3;
+
+  $selectProducts = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
+  $selectProducts->execute([$name]);
+
+  if ($selectProducts->rowCount() > 0) {
+    $message[] = "Product name already exists!";
+  } else {
+
+    if ($image1Size > 2000000 or $image2Size > 2000000 or $image3Size > 2000000) {
+
+      $message[] = 'image is too large';
+    } else {
+
+      move_uploaded_file($image1TmpName, $image1Folder);
+      move_uploaded_file($image2TmpName, $image2Folder);
+      move_uploaded_file($image3TmpName, $image3Folder);
+
+      $insertProduct = $conn->prepare("INSERT INTO `products` (name, details, price, image1, image2, image3) VALUES(?,?,?,?,?,?)");
+
+      $insertProduct->execute([$name, $details, $price, $image1, $image2, $image3]);
+
+      $message[] = 'new product added successfully';
+    }
+  }
 }
 
 ?>
@@ -30,51 +84,57 @@ if (!isset($admin_id)) {
 <body>
 
 
- <!-- add products -->
+  <!-- add products -->
 
-<section class="addProducts">
-  <form action="" method="POST" enctype="multipart/form-data">
-    <div class="flex">
-      <div class="iBoxes">
-      <span>Product Name - REQUIRED</span>
-      <input type="text" placeholder="enter name of product" class="box" name="name" maxlength="100" required>
-    </div>
+  <section class="addProducts">
 
-    <div class="iBoxes">
-      <span>Price - REQUIRED</span>
-      <input type="number" min="0" max="999999999" placeholder="enter price of product" class="box" name="price" onkeypress="if(this.value.length == 9) return false;" required>
-    </div>
-
-    <div class="iBoxes">
-      <span>image 1 (required)</span>
-      <input type="file" name="image01" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
-    </div>
-
-    <div class="iBoxes">
-      <span>image 2</span>
-      <input type="file" name="image02" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
-    </div>
-
-    <div class="iBoxes">
-      <span>image 3</span>
-      <input type="file" name="image03" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
-    </div>
-
-    <div class="iBoxes">
-      <span> product details</span>
-      <textarea name="details" class="box" placeholder="enter product details here!" cols="30" rows="10" maxlength="500" required></textarea>
-    </div>
-
-    <input type="submit" value="confirm" name="confirmAddProduct" class="btn">
+    <h1 class="heading">Add Product</h1>
 
 
-    </div>
-  </form>
+    <form action="" method="POST" enctype="multipart/form-data">
+
+
+      <div class="flex">
+        <div class="iBoxes">
+          <span>Product Name - REQUIRED</span>
+          <input type="text" placeholder="enter name of product" class="box" name="name" maxlength="100" required>
+        </div>
+
+        <div class="iBoxes">
+          <span>Price (£) - REQUIRED</span>
+          <input type="number" min="0" max="999999999" placeholder="enter price of product" class="box" name="price" onkeypress="if(this.value.length == 9) return false;" required>
+        </div>
+
+        <div class="iBoxes">
+          <span>image 1 (required)</span>
+          <input type="file" name="image01" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+        </div>
+
+        <div class="iBoxes">
+          <span>image 2</span>
+          <input type="file" name="image02" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+        </div>
+
+        <div class="iBoxes">
+          <span>image 3</span>
+          <input type="file" name="image03" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
+        </div>
+
+        <div class="iBoxes">
+          <span> product details</span>
+          <textarea name="details" class="box" placeholder="enter product details here!" cols="30" rows="10" maxlength="500" required></textarea>
+        </div>
+
+        <input type="submit" value="confirm" name="confirmAddProduct" class="btn">
+
+
+      </div>
+    </form>
 
 
 
 
-</section>
+  </section>
 
 
 
