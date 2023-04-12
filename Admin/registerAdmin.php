@@ -69,13 +69,13 @@ if (isset($_POST['submit'])) {
 
   <section class=" form-container">
 
-    <p>
-      password must contain at least: 1 Lowercase character, 1 Uppercase character, 1 Number and 1 symbol.
-    </p>
+
 
     <form action="" method="POST">
       <h3>Register</h3>
-
+      <p>
+        password must contain at least: 1 Lowercase character, 1 Uppercase character, 1 Number and 1 symbol.
+      </p>
       <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
       <input type="email" name="email" maxlength="30" required placeholder="enter email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.value = this.value.replace(/\s/g, '') " required>
