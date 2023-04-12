@@ -69,6 +69,10 @@ if (isset($_POST['submit'])) {
 
   <section class=" form-container">
 
+    <p>
+      password must contain at least: 1 Lowercase character, 1 Uppercase character, 1 Number and 1 symbol.
+    </p>
+
     <form action="" method="POST">
       <h3>Register</h3>
 
