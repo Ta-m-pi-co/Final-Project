@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
     <form action="" method="POST">
       <h3>Register</h3>
       <p>
-        password must contain at least: 1 Lowercase character, 1 Uppercase character, 1 Number and 1 symbol.
+        Password Must Contain At least: 1 Lowercase, 1 Uppercase, 1 Number and 1 symbol.
       </p>
       <input type="text" name="name" maxlength="20" required placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
