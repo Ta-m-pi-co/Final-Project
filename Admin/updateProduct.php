@@ -123,7 +123,7 @@ if (isset($_POST['update'])) {
 
 
     $selectProducts = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
-  $selectProducts->execute([$updateId]);
+    $selectProducts->execute([$updateId]);
 
     if ($selectProducts->rowCount() > 0) {
       while ($fetchProducts = $selectProducts->fetch(PDO::FETCH_ASSOC)) {

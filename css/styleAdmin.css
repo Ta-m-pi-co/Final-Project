@@ -1,66 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --main-color:#8857e4;
-  --secondary-color: #D5722A;
-  --black:#444;
-  --white:#fff;
-  --red:rgb(209, 24, 24);
-  --border:.2rem  solid var(--black);
+  --main-color: #8857e4;
+  --secondary-color: #d5722a;
+  --black: #444;
+  --white: #fff;
+  --red: rgb(209, 24, 24);
+  --border: 0.2rem solid var(--black);
   --light-bg: #f5f5f5;
   --light-color: #777;
-  --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-
-
-*{
-  font-family: 'Open Sans', sans-serif;
-  margin:0; padding: 0;
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  outline: none; border:none;
+  outline: none;
+  border: none;
 }
 
-*::selection{
-  color: var(--white); 
+*::selection {
+  color: var(--white);
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 1rem;
-  height: .5rem;
-
+  height: 0.5rem;
 }
 
-::-webkit-scrollbar-track{
-  background-color:none ;
+::-webkit-scrollbar-track {
+  background-color: none;
 }
 
-::-webkit-scrollbar-thumb{
-  background-color:var(--main-color) ;
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
 }
 
-html{
+html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
 
 body {
-background-color: var(--light-bg);
-
+  background-color: var(--light-bg);
 }
 
-section{
+section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-
 }
 
-.heading{
+.heading {
   text-align: center;
   margin-bottom: 2rem;
   color: var(--black);
@@ -68,7 +62,7 @@ section{
   font-weight: bolder;
 }
 
-.form-container{
+.form-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,33 +70,32 @@ section{
 }
 
 /* form styles*/
-.form-container form{
+.form-container form {
   background-color: var(--white);
-  border-radius: .5rem;
-  border:var(--border);
+  border-radius: 0.5rem;
+  border: var(--border);
   box-shadow: var(--box-shadow);
   padding: 2rem;
   text-align: center;
   width: 50rem;
 }
 
-.form-container form h3{
+.form-container form h3 {
   font-size: 2.5rem;
   color: var(--black);
   text-transform: uppercase;
-
 }
-.form-container form p{
-margin: 1rem 0;
-font-size: 2rem;
-color: var(--light-color);
+.form-container form p {
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: var(--light-color);
 }
 
-.form-container form p span{
+.form-container form p span {
   color: var(--secondary-color);
 }
 
-.form-container form .box{
+.form-container form .box {
   width: 100%;
   background-color: var(--light-bg);
   padding: 1.4rem;
@@ -111,19 +104,18 @@ color: var(--light-color);
   margin: 1rem 0;
   border: var(--border);
   font-size: 1.8rem;
-  border-radius: .5rem;
-
+  border-radius: 0.5rem;
 }
 
 /*button styles*/
 .btn,
 .deleteBtn,
-.optionBtn{
+.optionBtn {
   display: block;
   margin-top: 1rem;
-  border-radius:.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  width: 100%; 
+  width: 100%;
   font-size: 1.8rem;
   color: var(--white);
   padding: 1rem 3rem;
@@ -135,31 +127,30 @@ color: var(--light-color);
   background-color: var(--main-color);
 }
 
-.deleteBtn{
+.deleteBtn {
   background-color: rgb(209, 24, 24);
 }
 
-.optionBtn{
+.optionBtn {
   background-color: var(--secondary-color);
 }
 
 .btn:hover,
 .deleteBtn:hover,
-.optionBtn:hover{
+.optionBtn:hover {
   background-color: var(--black);
 }
 
-
-.flexBtn{
+.flexBtn {
   display: flex;
   gap: 1rem;
 }
 
-#menuBtn{
+#menuBtn {
   display: none;
 }
 /*messages*/
-.message{
+.message {
   position: sticky;
   top: 0;
   max-width: 1200px;
@@ -172,53 +163,52 @@ color: var(--light-color);
   justify-content: space-between;
 }
 
-
-.message span{
+.message span {
   font-size: 2rem;
   color: var(--black);
 }
 
-.message i{
+.message i {
   font-size: 2.5rem;
   color: var(--red);
   cursor: pointer;
-
 }
 
-.message i:hover{
+.message i:hover {
   color: var(--black);
 }
 
-
 /*Admin Header*/
-.header{
+.header {
   position: sticky;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: var(--white);
   box-shadow: var(--box-shadow);
   z-index: 1000;
 }
 
-.header .flex{
+.header .flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
 
-.header .flex .logo{
+.header .flex .logo {
   font-size: 2.5rem;
   color: var(--black);
 }
 
-.header .flex .logo span{
-  color:var(--main-color);
+.header .flex .logo span {
+  color: var(--main-color);
 }
 
-.header .flex .navbar a{
+.header .flex .navbar a {
   margin: 0 1rem;
   font-size: 2rem;
-  color: var(--light-color)
+  color: var(--light-color);
 }
 
 .header .flex .navbar a:hover {
@@ -226,114 +216,109 @@ color: var(--light-color);
   text-decoration: none;
 }
 
-.header .flex .icons > *{
+.header .flex .icons > * {
   font-size: 2.5rem;
   cursor: pointer;
   color: var(--light-color);
   margin-left: 1.7rem;
 }
 
-
-.header .flex .icons > *:hover{
+.header .flex .icons > *:hover {
   color: var(--main-color);
 }
 
-.header .flex .profile{
+.header .flex .profile {
   position: absolute;
-  top: 125%; right: 2rem;
+  top: 125%;
+  right: 2rem;
   background-color: var(--white);
   box-shadow: var(--box-shadow);
   border: var(--border);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 2rem;
   padding-top: 1rem;
   width: 30rem;
   display: none;
-  animation: fadeIn .2s linear;
+  animation: fadeIn 0.2s linear;
 }
 
 @keyframes fadeIn {
-  0%{
-    transform:translateX(1rem);
+  0% {
+    transform: translateX(1rem);
   }
 }
 
-.header .flex .profile p{
+.header .flex .profile p {
   margin-bottom: 1rem;
   font-size: 2rem;
   text-align: center;
   color: var(--black);
 }
 
-.header .flex .profile.active{
+.header .flex .profile.active {
   display: inline-block;
 }
 
-
-
 /*Dashboard*/
- .dashboard .box-container{
+.dashboard .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27rem,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
 }
 
- .dashboard .box-container .box{
+.dashboard .box-container .box {
   text-align: center;
   background-color: var(--white);
   border: var(--border);
   box-shadow: var(--box-shadow);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   text-align: center;
   padding: 2rem;
 }
 
- .dashboard .box-container .box h3{
+.dashboard .box-container .box h3 {
   font-size: 2.5rem;
   color: var(--black);
 }
- .dashboard .box-container .box h3 span{
+.dashboard .box-container .box h3 span {
   font-size: 2rem;
 }
 
-
- .dashboard .box-container .box p{
+.dashboard .box-container .box p {
   padding: 1.5rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: var(--light-bg);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-size: 1.8rem;
-  border:var(--border);
+  border: var(--border);
   color: var(--light-color);
   margin: 1rem 0;
-
-
 }
 
 /*Add product form*/
-.addProducts form{
+.addProducts form {
   margin: 0 auto;
   max-width: 70rem;
   background-color: var(--white);
-  border-radius: .5rem; 
+  border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
   border: var(--border);
-  padding: 2rem; 
+  padding: 2rem;
 }
 
-.addProducts form .flex{
+.addProducts form .flex {
   display: flex;
   flex-wrap: wrap;
   gap: 1.7rem;
 }
 
-.addProducts form .flex .iBoxes{
+.addProducts form .flex .iBoxes {
   flex: 1 1 40rem;
 }
 
-.addProducts form .flex .iBoxes .box{
+.addProducts form .flex .iBoxes .box {
   width: 100%;
   background-color: var(--light-bg);
   border: var(--border);
@@ -344,19 +329,19 @@ color: var(--light-color);
   margin-top: 1rem;
 }
 
-.addProducts form .flex .iBoxes span{
+.addProducts form .flex .iBoxes span {
   font-size: 2rem;
   color: var(--light-color);
 }
 
-.addProducts form .flex .iBoxes textarea{
+.addProducts form .flex .iBoxes textarea {
   height: 12rem;
 }
 
 /*Display Products*/
 .empty {
-  border:var(--border);
-  border-radius:.5rem;
+  border: var(--border);
+  border-radius: 0.5rem;
   background-color: var(--white);
   padding: 1.5rem;
   text-align: center;
@@ -366,7 +351,7 @@ color: var(--light-color);
   box-shadow: var(--box-shadow);
 }
 
-.displayProducts .box-container{
+.displayProducts .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 33rem);
   gap: 1.5rem;
@@ -374,64 +359,63 @@ color: var(--light-color);
   align-items: flex-start;
 }
 
-.displayProducts .box-container .box{
+.displayProducts .box-container .box {
   background-color: var(--white);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
   border: var(--border);
   padding: 1.5rem;
 }
 
-.displayProducts .box-container .box img{
+.displayProducts .box-container .box img {
   width: 100%;
   height: 20rem;
   object-fit: contain;
   margin-bottom: 1rem;
 }
 
-.displayProducts .box-container .box .name{
+.displayProducts .box-container .box .name {
   font-size: 2.1rem;
   color: var(--black);
 }
 
 .displayProducts .box-container .box .price {
   font-size: 2.4rem;
-  color:var(--main-color);
-  margin: .4rem 0;
+  color: var(--main-color);
+  margin: 0.4rem 0;
 }
 
-.displayProducts .box-container .box .details{
+.displayProducts .box-container .box .details {
   line-height: 1.5;
   font-size: 1.6rem;
   color: var(--light-color);
 }
 
 /*update product*/
-.updateProduct form{
+.updateProduct form {
   margin: 0 auto;
   max-width: 50rem;
   background-color: var(--white);
-  border-radius: .5rem; 
+  border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
   border: var(--border);
-  padding: 2rem; 
+  padding: 2rem;
 }
 
-.updateProduct form .imageContainer .mainImage img{
+.updateProduct form .imageContainer .mainImage img {
   height: 20rem;
   width: 100%;
   object-fit: contain;
 }
 
-.updateProduct form .imageContainer .subImages{
+.updateProduct form .imageContainer .subImages {
   display: flex;
   gap: 1.5rem;
   margin: 1rem 0;
   justify-content: center;
 }
 
-.updateProduct form .imageContainer .subImages img{
-
+.updateProduct form .imageContainer .subImages img {
   height: 7rem;
   width: 8rem;
   object-fit: contain;
@@ -439,14 +423,14 @@ color: var(--light-color);
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 0.6rem;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
-.updateProduct form .imageContainer .subImages img:hover{
+.updateProduct form .imageContainer .subImages img:hover {
   transform: scale(1.1);
 }
 
-.updateProduct form .box{
+.updateProduct form .box {
   width: 100%;
   background-color: var(--light-bg);
   border: var(--border);
@@ -457,66 +441,64 @@ color: var(--light-color);
   margin-top: 1rem 0;
 }
 
-.updateProduct form textarea{
+.updateProduct form textarea {
   height: 15rem;
   resize: none;
 }
 
-.updateProduct form span{
+.updateProduct form span {
   font-size: 1.7rem;
-  color:var(--black);
-  
+  color: var(--black);
 }
 
 /* media queries */
 
-@media (max-width:991px){
-  html{
+@media (max-width: 991px) {
+  html {
     font-size: 55%;
   }
 }
 
-@media (max-width:768px){
-  #menuBtn{
+@media (max-width: 768px) {
+  #menuBtn {
     display: inline-block;
   }
 
-  .header .flex .navbar{
+  .header .flex .navbar {
     position: absolute;
-    top: 99%; left: 0; right:0;
+    top: 99%;
+    left: 0;
+    right: 0;
     border-top: var(--border);
     border-bottom: var(--border);
     background-color: var(--white);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: .2s linear;
+    transition: 0.2s linear;
   }
 
   .header .flex .navbar.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
-  .header .flex .navbar a{
+  .header .flex .navbar a {
     display: block;
     margin: 2rem;
-
   }
 }
 
-@media (max-width:450px){
-  html{
+@media (max-width: 450px) {
+  html {
     font-size: 50%;
   }
-  .flexBtn{
-   flex-flow: column;
+  .flexBtn {
+    flex-flow: column;
     gap: 0;
   }
-  .heading{
+  .heading {
     font-size: 3rem;
   }
 
-  .displayProducts .box-container{
-
+  .displayProducts .box-container {
     grid-template-columns: 1fr;
-  
   }
 }
