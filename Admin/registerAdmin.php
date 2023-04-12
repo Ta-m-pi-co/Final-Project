@@ -76,9 +76,9 @@ if (isset($_POST['submit'])) {
 
       <input type="email" name="email" maxlength="30" required placeholder="enter email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.value = this.value.replace(/\s/g, '') " required>
 
-      <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="password" maxlength="20" required placeholder="enter password" class="box" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{7,16}$" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="password" name="confirmPassword" maxlength="20" required placeholder="confirm password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="confirmPassword" maxlength="20" required placeholder="confirm password" class="box" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{7,16}$" oninput="this.value = this.value.replace(/\s/g, '')">
 
       <input type="submit" value="register" name="submit" class="btn">
 
