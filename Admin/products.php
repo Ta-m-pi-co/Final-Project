@@ -24,19 +24,19 @@ if (isset($_POST['confirmAddProduct'])) {
   $image1 = filter_var($image1, FILTER_SANITIZE_STRING);
   $image1Size = $_FILES['image1']['size'];
   $image1TmpName = $_FILES['image1']['tmp_name'];
-  $image1Folder = '../images/' .$image1;
+  $image1Folder = '../images/' . $image1;
 
   $image2 = $_FILES['image2']['name'];
   $image2 = filter_var($image2, FILTER_SANITIZE_STRING);
   $image2Size = $_FILES['image2']['size'];
   $image2TmpName = $_FILES['image2']['tmp_name'];
-  $image2Folder = '../images/' .$image2;
+  $image2Folder = '../images/' . $image2;
 
   $image3 = $_FILES['image3']['name'];
   $image3 = filter_var($image3, FILTER_SANITIZE_STRING);
   $image3Size = $_FILES['image3']['size'];
   $image3TmpName = $_FILES['image3']['tmp_name'];
-  $image3Folder = '../images/' .$image3;
+  $image3Folder = '../images/' . $image3;
 
   $selectProducts = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
   $selectProducts->execute([$name]);
@@ -155,7 +155,7 @@ if (isset($_GET['delete'])) {
 
   <section class="displayProducts">
 
-  <h1 class="heading" style="padding-top: 0;">Added Products</h1>
+    <h1 class="heading" style="padding-top: 0;">Added Products</h1>
 
 
     <div class="box-container">
