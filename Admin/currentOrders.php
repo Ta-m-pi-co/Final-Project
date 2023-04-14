@@ -28,9 +28,30 @@ if (!isset($admin_id)) {
 </head>
 
 <body>
+<?php include '../components/headerAdmin.php'; ?>
+
+<section class="currentOrders">
+  <h1>Orders</h1>
+  <div class="box-container">
+  <p class="empty">no orders placed</p>
+  <?php
+  $selectOrders = $conn->prepare("SELECT * FROM `orders` WHERE");
+  $selectOrders->execute();
+  if ($selectOrders->rowCount() > 0) {
+
+  } else{
+    echo '<p class="empty">no orders placed</p>';
+  }  
+  
+  ?>
 
 
- 
+
+
+
+  </div>
+
+</section>
 
 
 
