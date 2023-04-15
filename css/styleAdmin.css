@@ -464,13 +464,13 @@ section {
   border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
   border: var(--border);
-  padding: 1.5rem;
+  padding: 2rem;
   padding-top: 1rem;
 }
 
 .currentOrders .box-container .box p{
-  padding: 0.3rem 0;
-  line-height: 2;
+  padding: 0.5rem 0;
+  line-height: 1.5;
   font-size: 1.8rem;
   color:var(--black);
 }
@@ -488,6 +488,66 @@ section {
   padding: 1rem 1.4rem;
   font-size: 2rem;
   color: var(--black);
+}
+
+/*admin user accounts*/
+.accounts .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.accounts .box-container .box{
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 1.5rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.accounts .box-container .box p{
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  font-size: 1.8rem;
+  color:var(--black);
+}
+
+.accounts .box-container .box p span{
+  color: var(--main-color);
+}
+
+/*messages*/
+.messages .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.messages .box-container .box{
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 1.5rem;
+  padding-top: 1rem;
+  
+}
+
+.messages .box-container .box p{
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  font-size: 1.8rem;
+  color:var(--black);
+}
+
+.messages .box-container .box p span{
+  color: var(--main-color);
 }
 
 
@@ -543,6 +603,12 @@ section {
   }
   
   .currentOrders .box-container {
+    grid-template-columns: 1fr;
+  }
+  .accounts .box-container{
+    grid-template-columns: 1fr;
+  }
+  .messages .box-container{
     grid-template-columns: 1fr;
   }
 }
