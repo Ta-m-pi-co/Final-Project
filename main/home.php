@@ -4,11 +4,11 @@ include '../components/connect.php';
 
 session_start();
 
-if (isset($_SESSION['userId'])) {
+if (isset($_SESSION['userID'])) {
 
-  $userId = $_SESSION['userId'];
+  $userID = $_SESSION['userID'];
 } else {
-  $userId = '';
+  $userID = '';
 }
 
 
