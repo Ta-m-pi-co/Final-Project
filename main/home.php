@@ -32,7 +32,7 @@ if (isset($_SESSION['userID'])) {
 
 <body>
 
-<?php include '../components/headerUser.php'; ?>
+  <?php include '../components/headerUser.php'; ?>
 
 
 
@@ -42,6 +42,8 @@ if (isset($_SESSION['userID'])) {
 
 
 
+
+  <?php include '../components/footer.php'; ?>
   <script src="../javascript/main.js"></script>
 </body>
 
