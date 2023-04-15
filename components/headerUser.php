@@ -46,10 +46,10 @@ if (isset($message)) {
       <div id="menuBtn" class="fas fa-bars"></div>
 
       <a href="search.php" class="fas fa-search"><span>Search</span></a>
-      
+
       <a href="wishlist.php" class="far fa-heart"><span>Saved (<?= $totalWishlistItems; ?>)</span></a>
-      
-      <a href="basket.php" class="fad fa-shopping-cart"><span>(<?= $totalBasketItems; ?>)</span></a>
+
+      <a href="basket.php" class="fas fa-shopping-cart"><span>(<?= $totalBasketItems; ?>)</span></a>
 
       <div id="userBtn" class="fas fa-user"></div>
     </div>

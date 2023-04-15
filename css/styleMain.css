@@ -117,16 +117,11 @@ section {
   display: none;
 }
 
-.header .flex .icons span{
+.icons span{
   display: block;
   text-align: center;
   font-size: 0.2rem;
 }
-
-.icons{
-  align-items: center;
-}
-
 
 /*messages*/
 .message {
@@ -252,7 +247,7 @@ section {
     display: inline-block;
   }
 
-  .header .flex .icons span{
+  .icons span{
     display: none;
   }
 
@@ -289,6 +284,8 @@ section {
   .heading {
     font-size: 3rem;
   }
+
+  
 
   
 }
