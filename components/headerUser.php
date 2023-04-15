@@ -49,7 +49,7 @@ if (isset($message)) {
       
       <a href="wishlist.php" class="far fa-heart"><span>Saved (<?= $totalWishlistItems; ?>)</span></a>
       
-      <a href="basket.php" class="far fa-shopping-cart"><span>(<?= $totalBasketItems; ?>)</span></a>
+      <a href="basket.php" class="fad fa-shopping-cart"><span>(<?= $totalBasketItems; ?>)</span></a>
 
       <div id="userBtn" class="fas fa-user"></div>
     </div>

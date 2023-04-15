@@ -120,6 +120,11 @@ section {
 .header .flex .icons span{
   display: block;
   text-align: center;
+  font-size: 0.2rem;
+}
+
+.icons{
+  align-items: center;
 }
 
 
@@ -245,6 +250,10 @@ section {
 @media (max-width: 768px) {
   #menuBtn {
     display: inline-block;
+  }
+
+  .header .flex .icons span{
+    display: none;
   }
 
   .header .flex .navbar {
