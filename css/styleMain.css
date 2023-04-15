@@ -123,6 +123,10 @@ section {
   font-size: 1.3rem;
 }
 
+#mIcon{
+  align-items: center;
+}
+
 /*messages*/
 .message {
   position: sticky;
