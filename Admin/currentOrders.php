@@ -7,7 +7,7 @@ $admin_id = $_SESSION['admin_id'];
 
 if (!isset($admin_id)) {
   header('location:admin_login.php');
-};
+}
 
 if (isset($_POST['updatePayStatus'])) {
   $orderId = $_POST['orderId'];
@@ -47,16 +47,17 @@ if (isset($_GET['delete'])) {
   <?php include '../components/headerAdmin.php'; ?>
 
   <section class="currentOrders">
-    <h1>Orders</h1>
+    <h1 class="heading">Orders</h1>
     <div class="box-container">
 
       <?php
-      $selectOrders = $conn->prepare("SELECT * FROM `orders` WHERE");
+      $selectOrders = $conn->prepare("SELECT * FROM `orders`");
       $selectOrders->execute();
       if ($selectOrders->rowCount() > 0) {
         while ($fetchOrders = $selectOrders->fetch(PDO::FETCH_ASSOC)) {
 
       ?>
+
           <div class="box">
             <p>user ID: <span><?= $fetchOrders['userID']; ?></span></p>
             <p>order placed: <span><?= $fetchOrders['dateOfOrder']; ?></span></p>

@@ -53,14 +53,14 @@ if (isset($_GET['delete'])) {
       $selectAccount->execute();
       if ($selectAccount->rowCount() > 0) {
         while ($fetchAccounts = $selectAccount->fetch(PDO::FETCH_ASSOC)) {
-        }
+        
 
       ?>
         <div class="box">
           <p>ID: <span><?= $fetchAccounts['id']; ?></span> </p>
           <p>Admin Username: <span><?= $fetchAccounts['name']; ?></span> </p>
           <div class="flexBtn">
-            <a href="adminUserAccounts.php?delete=<?= $fetchAccounts['id']; ?>" class="deleteBtn" onclick="return confirm('delete this?')">Remove Account</a>
+            <a href="adminUserAccounts.php?delete=<?= $fetchAccounts['id']; ?>" class="deleteBtn" onclick="return confirm('delete this?')">Delete</a>
 
             <?php
             if ($fetchAccounts['id'] == $admin_id) {
@@ -73,7 +73,7 @@ if (isset($_GET['delete'])) {
 
         </div>
       <?php
-
+        }
       } else {
         echo '<p class="empty">no admin accounts</p>';
       }
