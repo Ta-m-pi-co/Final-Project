@@ -34,6 +34,7 @@ if (isset($_GET['delete'])) {
 </head>
 
 <body>
+<?php include '../components/headerAdmin.php'; ?>
   <section class="messages">
 
     <h1 class="heading">Messages</h1>

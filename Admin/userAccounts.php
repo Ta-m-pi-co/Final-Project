@@ -50,7 +50,7 @@ if (isset($_GET['delete'])) {
 
 <body>
 
-  <?php include '../components/headerAdmin.php'; ?>
+<?php include '../components/headerAdmin.php'; ?>
 
   <section class="accounts">
 
