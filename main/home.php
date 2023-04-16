@@ -42,12 +42,13 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/headerUser.php'; ?>
 
   <div class="homeBg">
-    <section class="swiper homeSlider">
+
+    <section class="swiper" id="homeSlider">
 
       <div class="swiper-wrapper">
 
 
-        <div class="swiper-slide bannerImg">
+        <div class="swiper-slide" id="bannerImg">
           <div class="image">
             <img src="../images/home-img-1.jpg" alt="" width="500" height="500">
           </div>
@@ -57,7 +58,7 @@ if (isset($_SESSION['userID'])) {
             <a href="../main/store.php" class="btn">Go!</a>
           </div>
 
-          <div class="swiper-slide bannerImg">
+          <div class="swiper-slide" id="bannerImg">
             <div class="image">
               <img src="../images/home-img-2.jpg" alt="" width="500" height="500">
             </div>
@@ -67,7 +68,7 @@ if (isset($_SESSION['userID'])) {
               <a href="../main/store.php" class="btn">Go!</a>
             </div>
 
-            <div class="swiper-slide bannerImg">
+            <div class="swiper-slide" id="bannerImg">
               <div class="image">
                 <img src="../images/home-img-3.jpg" alt="" width="500" height="500">
               </div>
@@ -100,9 +101,10 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".homeSlider", {
+    var swiper = new Swiper("#homeSlider", {
       pagination: {
         el: ".swiper-pagination",
 
