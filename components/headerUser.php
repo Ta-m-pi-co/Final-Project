@@ -20,11 +20,11 @@ if (isset($message)) {
     <a href="home.php" class="logo">Crown<span>Stores</span></a>
 
     <nav class="navbar">
-      <a href="home.php">Home</a>
-      <a href="productDisplay.php">Products</a>
-      <a href="orders.php">Orders</a>
-      <a href="contact.php">Contact</a>
-      <a href="about.php">About</a>
+      <a href="../main/home.php">Home</a>
+      <a href="../main/productDisplay.php">Products</a>
+      <a href="../main/orders.php">Orders</a>
+      <a href="../main/contact.php">Contact</a>
+      <a href="../main/about.php">About</a>
 
     </nav>
 
