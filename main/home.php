@@ -89,7 +89,7 @@ if (isset($_SESSION['userID'])) {
 
   <section class="homeFilter">
 
-    <h1>Filter Products</h1>
+    <h1 class="heading">Filter Products</h1>
     <div class="swiper filterSlider">
 
       <div class="swiper-wrapper">
@@ -127,6 +127,54 @@ if (isset($_SESSION['userID'])) {
 
   </section>
 
+  <section class="homeProducts">
+    <h1 class="heading">Products</h1>
+
+    <div class="productSlider">
+
+      <div class="swiper-wrapper">
+
+        <?php
+        $selectProducts = $conn->prepare("SELECT * FROM `products` LIMIT 5");
+        $selectProducts->execute();
+
+        if ($selectProducts->rowCount() > 0) {
+          while ($fetchProducts = $selectProducts->fetch(PDO::FETCH_ASSOC)) {
+        ?>
+
+            <form action="" method="post" class="slide">
+              <button type="submit" name="addToWishlist" class="far fa-heart"></button>
+              <a href="qView.php?productID=<?= $fetchProducts['id']; ?>" class="fas fa-eye"></a>
+              <img src="../images/<?= $fetchProducts['image1']; ?>" alt="" class="image">
+              <div class="name"><?= $fetchProducts['name']; ?></div>
+              <div class="flex">
+
+
+                <div class="price">£<span><?= $fetchProducts['price']; ?></div>
+                <input type="number" name="qty" class="qty" min="1" max="99" value="1" onkeypress="if(this.value.length == 2) return false">
+
+              </div>
+
+              <input type="submit" value="add to basket" name="addToBasket" class="btn">
+
+            </form>
+        <?php
+          }
+        } else {
+          echo '<p class="empty">no products</p>';
+        }
+
+
+        ?>
+
+
+      </div>
+
+    </div>
+
+
+
+  </section>
 
 
   <?php include '../components/footer.php'; ?>
@@ -141,7 +189,7 @@ if (isset($_SESSION['userID'])) {
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
-        clickable:true,
+        clickable: true,
       },
     });
 
@@ -153,7 +201,7 @@ if (isset($_SESSION['userID'])) {
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
-        clickable:true,
+        clickable: true,
       },
       breakpoints: {
         0: {
