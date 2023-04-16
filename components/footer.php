@@ -13,7 +13,7 @@
 
     <div class="box">
       <h3>Shopping</h3>
-      <a href="../main/productDisplay.php">Store</a>
+      <a href="../main/store.php">Store</a>
       <a href="../main/orders.php">Orders</a>
       <a href="../main/basket.php">Basket</a>
       <a href="../main/wishlistMain.php">Wishlist</a>

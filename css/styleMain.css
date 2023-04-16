@@ -290,8 +290,20 @@ section {
   padding-bottom:2.5rem;
 }
 
+/*Home page*/
 
+.homeBg {
+  background: url(../images/background-img.jpg) no-repeat;
+  background-size:Cover ;
+  background-position: center;
+}
 
+.homeBg .bannerImg{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
 
 /* media queries */
 
