@@ -44,7 +44,7 @@ if (isset($_SESSION['userID'])) {
 
         <div class="bannerImg">
           <div class="image">
-            <img src="../images/home-img-1.jpg" alt="Pink Smart Watch">
+            <img src="../images/home-img-1.jpg" alt="Pink Smart Watch" width="500" height="500">
           </div>
           <div class="content">
             <span>Sale On Now!</span>
@@ -53,28 +53,28 @@ if (isset($_SESSION['userID'])) {
           </div>
 
           <div class="bannerImg">
-          <div class="image">
-            <img src="../images/home-img-2.jpg" alt="tablet">
-          </div>
-          <div class="content">
-            <span>Up to 30% Off Tablets!</span>
-            <h3>Tablets</h3>
-            <a href="../main/store.php">Go!</a>
-          </div>
+            <div class="image">
+              <img src="../images/home-img-2.jpg" alt="tablet" width="500" height="500">
+            </div>
+            <div class="content">
+              <span>Up to 30% Off Tablets!</span>
+              <h3>Tablets</h3>
+              <a href="../main/store.php">Go!</a>
+            </div>
 
-          <div class="bannerImg">
-          <div class="image">
-            <img src="../images/home-img-3.jpg" alt="phone and watch">
-          </div>
-          <div class="content">
-            <span>Smart Phone and Smart Watch Bundles available</span>
-            <h3>Smart Phones</h3>
-            <a href="../main/store.php">Go!</a>
-          </div>
+            <div class="bannerImg">
+              <div class="image">
+                <img src="../images/home-img-3.jpg" alt="phone and watch" width="500" height="500">
+              </div>
+              <div class="content">
+                <span>Smart Phone and Smart Watch Bundles available</span>
+                <h3>Smart Phones</h3>
+                <a href="../main/store.php">Go!</a>
+              </div>
 
 
-        </div>
-      </div>
+            </div>
+          </div>
 
 
 
