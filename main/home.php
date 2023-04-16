@@ -25,11 +25,13 @@ if (isset($_SESSION['userID'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
   <link rel="stylesheet" href="../css/styleMain.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
 
 </head>
 
@@ -40,7 +42,7 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/headerUser.php'; ?>
 
   <div class="homeBg">
-    <section class="swiper home-banner">
+    <section class="swiper homeSwiper">
 
       <div class="swiper-wrapper">
 
@@ -96,13 +98,14 @@ if (isset($_SESSION['userID'])) {
 
 
   <?php include '../components/footer.php'; ?>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
   <script src="../javascript/main.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".home-banner", {
+    var swiper = new Swiper(".homeSwiper", {
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
