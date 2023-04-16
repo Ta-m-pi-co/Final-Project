@@ -30,11 +30,34 @@ if (isset($_SESSION['userID'])) {
   <link rel="stylesheet" href="../css/styleMain.css">
 </head>
 
+<!--Video tutorials used to create website can be found here: https://www.youtube.com/@MrWebDesignerAnas/videos  -->
+
 <body>
 
   <?php include '../components/headerUser.php'; ?>
 
+  <div class="homeBg">
+    <section class="home">
 
+      <div class="w">
+
+
+        <div class="slider">
+          <div class="image">
+            src
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+    </section>
+
+
+  </div>
 
 
 

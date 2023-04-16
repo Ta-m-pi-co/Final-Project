@@ -17,7 +17,7 @@ if (isset($message)) {
 
 
   <section class="flex">
-    <a href="home.php" class="logo">Crown<span>Stores</span></a>
+    <a href="home.php" class="logo"><i class="fas fa-crown" style="color: #6516c5;"></i>Crown<span>Stores</span></a>
 
     <nav class="navbar">
       <a href="../main/home.php">Home</a>
