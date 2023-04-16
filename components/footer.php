@@ -16,13 +16,14 @@
       <a href="../main/productDisplay.php">Store</a>
       <a href="../main/orders.php">Orders</a>
       <a href="../main/basket.php">Basket</a>
-      <a href="../main/wishlist.php">Wishlist</a>
+      <a href="../components/wishlist.php">Wishlist</a>
 
     </div>
 
     <div class="box">
       <h3>Contact Info</h3>
-      <a href="mailto:cwoodbury1@uni.brighton.ac.uk" class="fal fa-envelope-open">cwoodbury1@uni.brighton.ac.uk</a>
+      <a href="mailto:cwoodbury1@uni.brighton.ac.uk"><i class="fas fa-envelope-open"></i>cwoodbury1@uni.brighton.ac.uk</a>
+      <a href="1234567890">Telephone: 1234567890</a>
     </div>
 
     <div class="box">
@@ -36,7 +37,6 @@
   </section>
 
   <div class="credit"> &copy; copyright @ <?= date('Y'); ?></div>
-
 
 
 </footer>
