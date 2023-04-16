@@ -26,12 +26,12 @@ if (isset($_SESSION['userID'])) {
   <title>Home</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
   <link rel="stylesheet" href="../css/styleMain.css">
 
-  
+
 
 </head>
 
@@ -42,14 +42,14 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/headerUser.php'; ?>
 
   <div class="homeBg">
-    <section class="swiper homeSwiper">
+    <section class="swiper homeSlider">
 
       <div class="swiper-wrapper">
 
 
         <div class="swiper-slide bannerImg">
           <div class="image">
-            <img src="../images/home-img-1.jpg" alt="Pink Smart Watch" width="500" height="500">
+            <img src="../images/home-img-1.jpg" alt="" width="500" height="500">
           </div>
           <div class="content">
             <span>Sale On Now!</span>
@@ -59,7 +59,7 @@ if (isset($_SESSION['userID'])) {
 
           <div class="swiper-slide bannerImg">
             <div class="image">
-              <img src="../images/home-img-2.jpg" alt="tablet" width="500" height="500">
+              <img src="../images/home-img-2.jpg" alt="" width="500" height="500">
             </div>
             <div class="content">
               <span>Up to 30% Off Tablets!</span>
@@ -69,7 +69,7 @@ if (isset($_SESSION['userID'])) {
 
             <div class="swiper-slide bannerImg">
               <div class="image">
-                <img src="../images/home-img-3.jpg" alt="phone and watch" width="500" height="500">
+                <img src="../images/home-img-3.jpg" alt="" width="500" height="500">
               </div>
               <div class="content">
                 <span>Smart Phone and Smart Watch Bundles available</span>
@@ -100,18 +100,19 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-  <script src="../javascript/main.js"></script>
-
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".homeSwiper", {
+    var swiper = new Swiper(".homeSlider", {
       pagination: {
         el: ".swiper-pagination",
-        dynamicBullets: true,
+
       },
     });
   </script>
+  <script src="../javascript/main.js"></script>
+
+
+
 </body>
 
 </html>
