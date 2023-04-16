@@ -21,7 +21,7 @@
     </div>
 
     <div class="box">
-      <h3>Contact info</h3>
+      <h3>Contact Info</h3>
       <a href="mailto:cwoodbury1@uni.brighton.ac.uk" class="fal fa-envelope-open">cwoodbury1@uni.brighton.ac.uk</a>
     </div>
 
