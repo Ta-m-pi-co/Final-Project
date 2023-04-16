@@ -24,6 +24,7 @@
       <h3>Contact Info</h3>
       <a href="mailto:cwoodbury1@uni.brighton.ac.uk"><i class="fas fa-envelope-open"></i>Email</a>
       <a href="1234567890"><i class="fas fa-phone"></i>Telephone</a>
+      <a target="_blank" href="https://icons8.com/"></a>Category Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
     </div>
 
     <div class="box">

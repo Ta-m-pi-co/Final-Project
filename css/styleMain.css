@@ -296,6 +296,7 @@ section {
   background: url(../images/background-img-main.png) no-repeat;
   background-size:Cover ;
   background-position: center;
+  padding: 2rem;
 }
 
 .homeBg #bannerImg{
@@ -304,6 +305,8 @@ section {
   gap: 2rem;
   align-items: center;
   padding-top: 2.5rem;
+  padding-bottom: 5rem;
+  padding: 2rem;
 }
 
 .homeBg #bannerImg .image {
@@ -375,6 +378,15 @@ section {
   .header .flex .navbar a {
     display: block;
     margin: 2rem;
+  }
+  .homeBg #bannerImg .content {
+    text-align: center;
+  }
+  .homeBg #bannerImg .content h3{
+    text-align: center;
+    font-size: 3.7rem;
+    line-height: initial;
+    padding: 1rem 0;
   }
 }
 
