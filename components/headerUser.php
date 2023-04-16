@@ -47,7 +47,7 @@ if (isset($message)) {
 
       <a href="search.php" id=mIcon class="fas fa-search"><span>Search</span></a>
 
-      <a href="wishlist.php" id=mIcon class="far fa-heart"><span>Saved(<?= $totalWishlistItems; ?>)</span></a>
+      <a href="wishlistMain.php" id=mIcon class="far fa-heart"><span>Saved(<?= $totalWishlistItems; ?>)</span></a>
 
       <a href="basket.php" id=mIcon class="fas fa-shopping-cart"><span>Cart(<?= $totalBasketItems; ?>)</span></a>
 
