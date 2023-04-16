@@ -303,6 +303,35 @@ section {
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
+  padding-top: 2.5rem;
+}
+
+.homeBg .bannerImg .image {
+  flex: 1 1 40rem;
+}
+
+.homeBg .bannerImg .image img{
+  flex: 1 1 40rem;
+  width: 100%;
+  height: 40rem;
+  object-fit: contain;
+}
+
+.homeBg .bannerImg .content {
+  flex: 1 1 40rem;
+}
+
+.homeBg .bannerImg .content span{
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.homeBg .bannerImg .content h3{
+  margin-top: 0.4rem;
+  font-size: 4rem;
+  color: var(--white);
+  line-height: 1.5rem;
+  text-transform: capitalize;
 }
 
 /* media queries */

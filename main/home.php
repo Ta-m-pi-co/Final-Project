@@ -28,6 +28,9 @@ if (isset($_SESSION['userID'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
   <link rel="stylesheet" href="../css/styleMain.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 </head>
 
 <!--Video tutorials used to create website can be found here: https://www.youtube.com/@MrWebDesignerAnas/videos  -->
@@ -37,46 +40,47 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/headerUser.php'; ?>
 
   <div class="homeBg">
-    <section class="home">
+    <section class="swiper home-banner">
 
-      <div class="w">
+      <div class="swiper-wrapper">
 
 
-        <div class="bannerImg">
+        <div class="swiper-slide bannerImg">
           <div class="image">
             <img src="../images/home-img-1.jpg" alt="Pink Smart Watch" width="500" height="500">
           </div>
           <div class="content">
             <span>Sale On Now!</span>
             <h3>Smart Watches</h3>
-            <a href="../main/store.php">Go!</a>
+            <a href="../main/store.php" class="btn">Go!</a>
           </div>
 
-          <div class="bannerImg">
+          <div class="swiper-slide bannerImg">
             <div class="image">
               <img src="../images/home-img-2.jpg" alt="tablet" width="500" height="500">
             </div>
             <div class="content">
               <span>Up to 30% Off Tablets!</span>
               <h3>Tablets</h3>
-              <a href="../main/store.php">Go!</a>
+              <a href="../main/store.php" class="btn">Go!</a>
             </div>
 
-            <div class="bannerImg">
+            <div class="swiper-slide bannerImg">
               <div class="image">
                 <img src="../images/home-img-3.jpg" alt="phone and watch" width="500" height="500">
               </div>
               <div class="content">
                 <span>Smart Phone and Smart Watch Bundles available</span>
                 <h3>Smart Phones</h3>
-                <a href="../main/store.php">Go!</a>
+                <a href="../main/store.php" class="btn">Go!</a>
               </div>
 
 
             </div>
+
           </div>
 
-
+          <div class="swiper-pagination"></div>
 
 
     </section>
@@ -92,7 +96,19 @@ if (isset($_SESSION['userID'])) {
 
 
   <?php include '../components/footer.php'; ?>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
   <script src="../javascript/main.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".home-banner", {
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+    });
+  </script>
 </body>
 
 </html>
