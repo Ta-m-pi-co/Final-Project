@@ -253,23 +253,28 @@ section {
   font-size: 2.5rem;
   color: var(--black);
   text-transform: capitalize;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.3rem;
 }
 
 .footer .box-container .box a{
   display: block;
-  padding: 1rem 0;
+  padding: 0.7rem 0;
   color: var(--light-color);
   font-size: 1.7rem;
   padding-right: 1rem;
   
-  color: var(--main-color);
+}
+.footer .box-container .box a i {
+ padding-right: 1rem; 
+ transition: .2s linear;
+ color: var(--main-color);
 }
 
-.footer .box-container .box a:hover{
-padding-right: 2rem;
-color: var(--main-color);
-transition: .2s linear;
+
+.footer .box-container .box a:hover i{
+  padding-right: 2rem; 
+
+
 }
 
 .footer .credit {
