@@ -293,7 +293,7 @@ section {
 /*Home page*/
 
 .homeBg {
-  background: url(../images/background-img.jpg) no-repeat;
+  background: url(../images/background-img-main.png) no-repeat;
   background-size:Cover ;
   background-position: center;
 }
