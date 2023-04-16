@@ -22,7 +22,7 @@
 
     <div class="box">
       <h3>Contact Info</h3>
-      <a href="mailto:cwoodbury1@uni.brighton.ac.uk"><i class="fas fa-envelope-open"></i>cwoodbury1@uni.brighton.ac.uk</a>
+      <a href="mailto:cwoodbury1@uni.brighton.ac.uk"><i class="fas fa-envelope-open"></i>Email</a>
       <a href="1234567890"><i class="fas fa-phone"></i>Telephone</a>
     </div>
 
