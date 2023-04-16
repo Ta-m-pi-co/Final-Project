@@ -41,12 +41,74 @@ if (isset($_SESSION['userID'])) {
 
   <?php include '../components/headerUser.php'; ?>
 
+
+  <div class="homeBg">
+
+    <section class="home">
+
+      <div class="swiper" id="homeSlider">
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide" id="bannerImg">
+            <div class="image">
+              <img src="../images/home-img-1.jpg" alt="" width="500" height="500">
+            </div>
+
+            <div class="content">
+              <span>Sale On Now!</span>
+              <h3>Smart Watches</h3>
+              <a href="../main/store.php" class="btn">Go!</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="bannerImg">
+            <div class="image">
+              <img src="../images/home-img-2.jpg" alt="" width="500" height="500">
+            </div>
+
+            <div class="content">
+              <span>Up to 30% Off Tablets!</span>
+              <h3>Tablets</h3>
+              <a href="../main/store.php" class="btn">Go!</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="bannerImg">
+            <div class="image">
+              <img src="../images/home-img-3.jpg" alt="" width="500" height="500">
+            </div>
+
+            <div class="content">
+              <span>Smart Phone and Smart Watch Bundles available</span>
+              <h3>Smart Phones</h3>
+              <a href="../main/store.php" class="btn">Go!</a>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+
+
+
+    </section>
+
+
+
+  </div>
+  <!--
   <div class="homeBg">
 
     <section class="swiper" id="homeSlider">
 
       <div class="swiper-wrapper">
-
 
         <div class="swiper-slide" id="bannerImg">
           <div class="image">
@@ -57,6 +119,7 @@ if (isset($_SESSION['userID'])) {
             <h3>Smart Watches</h3>
             <a href="../main/store.php" class="btn">Go!</a>
           </div>
+      </div>
 
           <div class="swiper-slide" id="bannerImg">
             <div class="image">
@@ -67,8 +130,10 @@ if (isset($_SESSION['userID'])) {
               <h3>Tablets</h3>
               <a href="../main/store.php" class="btn">Go!</a>
             </div>
-
-            <div class="swiper-slide" id="bannerImg">
+          
+          </div>
+          
+          <div class="swiper-slide" id="bannerImg">
               <div class="image">
                 <img src="../images/home-img-3.jpg" alt="" width="500" height="500">
               </div>
@@ -77,11 +142,9 @@ if (isset($_SESSION['userID'])) {
                 <h3>Smart Phones</h3>
                 <a href="../main/store.php" class="btn">Go!</a>
               </div>
-
-
             </div>
 
-          </div>
+          
 
           <div class="swiper-pagination"></div>
 
@@ -92,7 +155,7 @@ if (isset($_SESSION['userID'])) {
   </div>
 
 
-
+-->
 
 
 
@@ -107,7 +170,6 @@ if (isset($_SESSION['userID'])) {
     var swiper = new Swiper("#homeSlider", {
       pagination: {
         el: ".swiper-pagination",
-
       },
     });
   </script>
