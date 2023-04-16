@@ -23,7 +23,7 @@ if (isset($_SESSION['userID'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quick View</title>
+  <title>Home</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
@@ -32,7 +32,7 @@ if (isset($_SESSION['userID'])) {
 
 <body>
 
-<?php include '../components/headerUser.php'; ?>
+  <?php include '../components/headerUser.php'; ?>
 
 
 
@@ -41,6 +41,9 @@ if (isset($_SESSION['userID'])) {
 
 
 
+
+
+  <?php include '../components/footer.php'; ?>
   <script src="../javascript/main.js"></script>
 </body>
 
