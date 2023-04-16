@@ -264,6 +264,11 @@ section {
   padding-right: 1rem;
   
 }
+
+.footer .box-container .box a{
+  padding-right: 1rem; 
+ transition: .2s linear;
+}
 .footer .box-container .box a i {
  padding-right: 1rem; 
  transition: .2s linear;
