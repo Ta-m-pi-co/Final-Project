@@ -87,19 +87,45 @@ if (isset($_SESSION['userID'])) {
     </section>
   </div>
 
-  <div class="homeFilter">
+  <section class="homeFilter">
 
-  <div class="filterSlider">
+    <h1>Filter Products</h1>
+    <div class="swiper filterSlider">
 
-  <div class="w">
+      <div class="swiper-wrapper">
 
-<a href="" class="swiper-slide" id="bannerImg"></a>
-  </div>
+        <a href="category.php?category=camera" class="swiper-slide" id="catSlide">
+          <img src="../images/icon-camera.png" alt="">
+          <h3>cameras</h3>
+        </a>
 
-  </div>
+        <a href="category.php?category=watches" class="swiper-slide" id="catSlide">
+          <img src="../images/icon-watch.png" alt="">
+          <h3>watches</h3>
+        </a>
+
+        <a href="category.php?category=tv" class="swiper-slide" id="catSlide">
+          <img src="../images/icon-tv.png" alt="">
+          <h3>tv</h3>
+        </a>
+        <a href="category.php?category=laptop" class="swiper-slide" id="catSlide">
+          <img src="../images/icon-laptop.png" alt="">
+          <h3>laptops</h3>
+        </a>
+        <a href="category.php?category=mobile" class="swiper-slide" id="catSlide">
+          <img src="../images/icon-mobile.png" alt="">
+          <h3>smartphones</h3>
+        </a>
 
 
-  </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+    </div>
+
+
+  </section>
 
 
 
@@ -115,6 +141,33 @@ if (isset($_SESSION['userID'])) {
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
+        clickable:true,
+      },
+    });
+
+
+
+    var swiper = new Swiper(".filterSlider", {
+      loop: true,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable:true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+        },
+        650: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
       },
     });
   </script>

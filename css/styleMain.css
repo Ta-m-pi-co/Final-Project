@@ -51,7 +51,7 @@ body {
 section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 .heading {
@@ -172,6 +172,7 @@ section {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  padding: 2rem;
 }
 
 .header .flex .logo {
@@ -341,6 +342,44 @@ section {
   display: inline-block;
   width: auto;
 }
+
+
+.homeFilter #catSlide{
+  text-align: center;
+  border: var(--border);
+  border-radius: .5rem;
+  padding: 2.2rem;
+  box-shadow: black;
+  background-color: white;
+  display: inline-block;
+  margin-bottom: 5rem;  
+}
+
+.homeFilter #catSlide img{
+
+  height: 8rem;
+  width: 8rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.homeFilter #catSlide h3{
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.homeFilter #catSlide:hover{
+  background-color: rgb(62, 33, 70);
+}
+
+.homeFilter #catSlide:hover img {
+  filter: invert();
+}
+
+.homeFilter #catSlide:hover h3{
+  color: var(--white);
+}
+
 
 /* media queries */
 
