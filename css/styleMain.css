@@ -361,7 +361,7 @@ section {
 .homeFilter #catSlide{
   text-align: center;
   border: var(--border);
-  border-radius: .5rem;
+  border-radius: 50%;
   padding: 2.2rem;
   box-shadow: black;
   background-color: white;

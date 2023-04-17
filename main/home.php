@@ -89,7 +89,7 @@ if (isset($_SESSION['userID'])) {
 
   <section class="homeFilter">
 
-    <h1 class="heading">Looking for something Specific?</h1>
+    <h1 class="heading">Looking for Something Specific?</h1>
     <div class="swiper filterSlider">
 
       <div class="swiper-wrapper">
