@@ -42,7 +42,7 @@ if (isset($_SESSION['userID'])) {
 
       <?php
       $category = $_GET['category'];
-      $selectProducts = $conn->prepare("SELECT * FROM `products` WHERE name = LIKE '%{$category}%'");
+      $selectProducts = $conn->prepare("SELECT * FROM `products` WHERE name LIKE '%{$category}%'");
       $selectProducts->execute();
 
       if ($selectProducts->rowCount() > 0) {

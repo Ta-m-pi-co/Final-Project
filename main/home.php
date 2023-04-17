@@ -100,7 +100,7 @@ include '../components/wishlistBasket.php'
           <h3>cameras</h3>
         </a>
 
-        <a href="category.php?category=watches" class="swiper-slide" id="catSlide">
+        <a href="category.php?category=watch" class="swiper-slide" id="catSlide">
           <img src="../images/icon-watch.png" alt="">
           <h3>watches</h3>
         </a>
