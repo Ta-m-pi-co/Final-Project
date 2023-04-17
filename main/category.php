@@ -37,7 +37,9 @@ include '../components/wishlistBasket.php'
 
   <section class="products">
 
-    <h1 class="heading"><?php '%{$category}%' ?></h1>
+    <h1 class="heading">
+      <?= '%{$category}%' ?>
+    </h1>
 
     <div class="boxContainer">
 
