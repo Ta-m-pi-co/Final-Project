@@ -219,6 +219,7 @@ section {
   width: 30rem;
   display: none;
   animation: fadeIn 0.2s linear;
+  flex-wrap: wrap;
 }
 
 .header .flex .profile:hover{
@@ -241,6 +242,7 @@ section {
 
 .header .flex .profile.active {
   display: block;
+  
 }
 
 /*Footer*/
