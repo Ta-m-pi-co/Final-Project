@@ -671,8 +671,39 @@ object-fit: contain;
 padding: .5rem;
 }
 
+.itemView .box .content .name {
+  font-size: 2rem;
+  color: var(--black);
+}
 
+.itemView .box .flex {
+display: flex;
+gap: .5rem;
+justify-content: space-between;
+align-items: center;
+margin: .7rem 0;
+}
 
+.itemView .box .flex .price {
+font-size: 1.8rem;
+color: var(--black);
+}
+
+.itemView .box .flex .qty {
+  padding: 1.2rem 1.4rem;
+  border: var(--border);
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.itemView .box .details {
+  font-size: 1.7rem;
+  color: var(--black);
+  line-height: 2;
+  margin: .5rem;
+  border: thin black;
+  background-color: var(--light-bg);
+}
 
 
 /* media queries */
