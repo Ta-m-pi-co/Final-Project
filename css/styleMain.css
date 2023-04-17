@@ -389,11 +389,12 @@ section {
 
 .homeFilter #catSlide:hover{
   background-color: rgb(62, 33, 70);
+  transform: scale(1.1);
 }
 
 .homeFilter #catSlide:hover img{
   filter: invert();
-  transform: scale(1.1);
+  
 }
 
 .homeFilter #catSlide:hover h3{
