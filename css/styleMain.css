@@ -774,5 +774,11 @@ color: var(--black);
 .products .boxContainer {
   grid-template-columns: 1fr;
 }
+
+.itemView .box .imageContainer .subImages img {
+width: 8rem;
+height: 6rem;
+
+}
   
 }

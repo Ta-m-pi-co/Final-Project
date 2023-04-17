@@ -23,7 +23,7 @@ include '../components/wishlistBasket.php';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>View</title>
+  <title>Item</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
@@ -35,9 +35,6 @@ include '../components/wishlistBasket.php';
   <?php include '../components/headerUser.php'; ?>
 
   <section class="itemView">
-
-
-
 
     <?php
     $productID = $_GET['productID'];
@@ -65,7 +62,6 @@ include '../components/wishlistBasket.php';
               <img src="../images/<?= $fetchProducts['image3']; ?>" alt="">
             </div>
           </div>
-
 
           <div class="content">
             <div class="name"><?= $fetchProducts['name']; ?></div>
@@ -100,15 +96,10 @@ include '../components/wishlistBasket.php';
 
   </section>
 
-
-
-
-
-
-
-
   <?php include '../components/footer.php'; ?>
+  
   <script src="../javascript/main.js"></script>
+  
 </body>
 
 </html>
