@@ -208,7 +208,7 @@ section {
 
 .header .flex .profile {
   position: absolute;
-  top: 125%;
+  top: 115%;
   right: 2rem;
   background-color: var(--white);
   box-shadow: var(--box-shadow);
@@ -221,9 +221,13 @@ section {
   animation: fadeIn 0.2s linear;
 }
 
+.header .flex .profile:hover{
+  border: var(--border);
+}
+
 @keyframes fadeIn {
   0% {
-    transform: translateX(1rem);
+    transform: translateY(1.5rem);
   }
 }
 
@@ -232,10 +236,11 @@ section {
   font-size: 2rem;
   text-align: center;
   color: var(--black);
+  text-transform: capitalize;
 }
 
 .header .flex .profile.active {
-  display: inline-block;
+  display: block;
 }
 
 /*Footer*/

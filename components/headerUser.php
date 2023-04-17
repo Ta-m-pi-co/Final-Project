@@ -69,36 +69,36 @@ if (isset($message)) {
         <p><?= $fetch_profile['name']; ?></p>
         <a href="../main/userUpdate.php" class="btn">Update Profile</a>
 
-        <<div class="flexBtn">
+        <div class="flexBtn">
           <a href="../main/userLogin.php" class="optionBtn">Login</a>
 
           <a href="../main/userRegister.php" class="optionBtn">Register</a>
 
-    </div>
+        </div>
 
-    <a href="../components/logoutUser.php" onclick=" return confirm('Are you sure you want to logout?');" class="deleteBtn">Logout</a>
+        <a href="../components/logoutUser.php" onclick=" return confirm('Are you sure you want to logout?');" class="deleteBtn">Logout</a>
 
-  <?php
+      <?php
       } else {
 
 
 
-  ?>
+      ?>
 
-    <p>please Login!</p>
-    <div class="flexBtn">
-      <a href="../main/userLogin.php" class="optionBtn">Login</a>
+        <p>Login or Register</p>
+        <div class="flexBtn">
+          <a href="../main/userLogin.php" class="optionBtn">Login</a>
 
-      <a href="../main/userRegister.php" class="optionBtn">Register</a>
+          <a href="../main/userRegister.php" class="optionBtn">Register</a>
 
-    </div>
+        </div>
 
-  <?php
+      <?php
       }
 
-  ?>
+      ?>
 
-  </div>
+    </div>
 
 
 
