@@ -626,44 +626,43 @@ top: 1rem;
   /*Item View*/
 
   .itemView .heading {
-
     text-transform: capitalize;
   }
 
-.itemView .box {
+.itemView .box{
   background-color: var(--white);
   border: var(--border);
   display: flex;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: .5rem;
   box-shadow: var(--box-shadow);
 }
 
-.itemView .box .imageContainer {
-  flex: 1 1 40rem;
+.itemView .box .imageContainer{
+  flex: 1 1 30rem;
 }
 
-.itemView .box .content {
-  flex: 1 1 40rem;
+.itemView .box .content{
+  flex: 1 1 30rem;
 }
 
-.itemView .box .imageContainer .mainImage img {
+.itemView .box .imageContainer .mainImage img{
   height: 25rem;
   width: 100%;
   object-fit: contain;
 }
 
-itemView .box .imageContainer .subImage {
+itemView .box .imageContainer .subImages{
   display: flex;
   justify-content: center;
   margin-top: 2rem;
   gap: 1rem;
 }
 
-itemView .box .imageContainer .subImage img {
+itemView .box .imageContainer .subImages img{
 height: 7rem;
 width: 10rem;
 border: var(--border);

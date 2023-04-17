@@ -59,7 +59,7 @@ if (isset($_SESSION['userID'])) {
             <div class="mainImage">
               <img src="../images/<?= $fetchProducts['image1']; ?>" alt="">
             </div>
-            <div class="subImage">
+            <div class="subImages">
               <img src="../images/<?= $fetchProducts['image1']; ?>" alt="">
               <img src="../images/<?= $fetchProducts['image2']; ?>" alt="">
               <img src="../images/<?= $fetchProducts['image3']; ?>" alt="">
