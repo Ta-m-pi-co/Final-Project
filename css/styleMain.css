@@ -107,6 +107,7 @@ section {
 .optionBtn:hover {
   background-color: var(--black);
   transform: scale(1.1);
+  transition: .2s linear;
 }
 
 .flexBtn {
@@ -707,7 +708,7 @@ color: var(--black);
   background-color: var(--light-bg);
 }
 
-.itemView .box .imageContainer .subImages .img:hover{
+.itemView .box .imageContainer .subImages img:hover{
   transform: scale(1.2);
 
 }
