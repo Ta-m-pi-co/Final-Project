@@ -254,7 +254,9 @@ section {
 #login {
   background-color: var(--main-color);
 }
-
+#login:hover {
+  background-color: green;
+}
 /*Footer*/
 .footer{
   background-color: #dcd9dd;
