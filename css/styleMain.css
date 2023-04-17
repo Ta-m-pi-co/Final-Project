@@ -624,7 +624,13 @@ top: 1rem;
 
 
   /*Item View*/
-.itemView .box form{
+
+  .itemView .heading {
+
+    text-transform: capitalize;
+  }
+
+.itemView .box {
   background-color: var(--white);
   border: var(--border);
   display: flex;
@@ -636,28 +642,28 @@ top: 1rem;
   box-shadow: var(--box-shadow);
 }
 
-.itemView .box form .imageContainer {
+.itemView .box .imageContainer {
   flex: 1 1 40rem;
 }
 
-.itemView .box form .content {
+.itemView .box .content {
   flex: 1 1 40rem;
 }
 
-.itemView .box form .imageContainer .mainImage img {
+.itemView .box .imageContainer .mainImage img {
   height: 25rem;
   width: 100%;
   object-fit: contain;
 }
 
-itemView .box form .imageContainer .subImage {
+itemView .box .imageContainer .subImage {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
   gap: 1rem;
 }
 
-itemView .box form .imageContainer .subImage img {
+itemView .box .imageContainer .subImage img {
 height: 7rem;
 width: 10rem;
 border: var(--border);
