@@ -144,6 +144,8 @@ if (isset($_SESSION['userID'])) {
 
         </div>
       </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
@@ -157,13 +159,18 @@ if (isset($_SESSION['userID'])) {
 
   <script>
     var swiper = new Swiper(".reviewSlides", {
-      loop: true,
       spaceBetween: 20,
+      loop: true,
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
         clickable: true,
       },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
       breakpoints: {
         0: {
           slidesPerView: 1,
