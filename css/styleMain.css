@@ -128,11 +128,11 @@ section {
 /*messages*/
 .message {
   position: sticky;
-  top: 0;
+  bottom: 0;
   max-width: 1200px;
   margin: 0 auto;
   background-color: var(--light-bg);
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -140,7 +140,7 @@ section {
 }
 
 .message span {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--black);
 }
 
@@ -154,7 +154,7 @@ section {
   color: var(--black);
 }
 
-/*Admin Header*/
+/*user Header*/
 .header {
   position: sticky;
   top: 0;
