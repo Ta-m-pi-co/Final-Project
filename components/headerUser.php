@@ -87,9 +87,9 @@ if (isset($message)) {
 
         <p>Login or Register</p>
         <div class="flexBtn">
-          <a href="../main/userLogin.php" class="optionBtn">Login</a>
+          <a href="../main/userLogin.php" id="login" class="optionBtn">Login</a>
 
-          <a href="../main/userRegister.php" class="optionBtn">Register</a>
+          <a href="../main/userRegister.php" id="register" class="optionBtn">Register</a>
 
         </div>
 
