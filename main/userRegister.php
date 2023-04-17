@@ -11,6 +11,39 @@ if (isset($_SESSION['userID'])) {
   $userID = '';
 }
 
+if (isset($_POST['submit'])) {
+
+  $name = $_POST['name'];
+  $name = filter_var($name, FILTER_SANITIZE_STRING);
+
+  $password = sha1($_POST['password']);
+  $password = filter_var($password, FILTER_SANITIZE_STRING);
+
+  $confirmPassword = sha1($_POST['confirmPassword']);
+  $confirmPassword = filter_var($confirmPassword, FILTER_SANITIZE_STRING);
+
+  $email = $_POST['email'];
+  $email = filter_var($email, FILTER_SANITIZE_STRING);
+
+
+  $selectUser = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+  $selectUser->execute([$email]);
+  $row = $selectUser->fetch(PDO::FETCH_ASSOC);
+
+  if ($selectUser->rowCount() > 0) {
+    $message[] = 'email already in use!';
+  } else {
+    if ($password != $confirmPassword) {
+      $message[] = 'passwords do not match';
+    } else {
+      $insertUser = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
+
+      $insertUser->execute([$name, $email, $confirmPassword]);
+
+      $message[] = 'new admin created successfully';
+    }
+  }
+}
 
 ?>
 
@@ -39,9 +72,16 @@ if (isset($_SESSION['userID'])) {
   <section class="formContainer">
     <form action="" method="POST">
       <h3>Register</h3>
-      <input type="email" class="box" placeholder="enter email" name="email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')" required>
-      <input type="password" class="box" placeholder="enter password" name="password" maxlength="20" oninput="this.value = this.value.replace(/\s/g, '')" required>
-      <input type="submit" value="login" class="btn" name="submit">
+
+      <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" required>
+
+      <input type="email" name="email" maxlength="30" placeholder="enter email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="this.value = this.value.replace(/\s/g, '') " required>
+
+      <input type="password" name="password" maxlength="20" placeholder="enter password" class="box" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{7,16}$" oninput="this.value = this.value.replace(/\s/g, '')" required>
+
+      <input type="password" name="confirmPassword" maxlength="20" placeholder="confirm password" class="box" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{7,16}$" oninput="this.value = this.value.replace(/\s/g, '')" required>
+
+      <input type="submit" value="register" class="btn" name="submit">
 
 
       <p>Already have an account?</p>
