@@ -11,7 +11,7 @@ if (isset($_SESSION['userID'])) {
   $userID = '';
 }
 
-
+include '../components/wishlistBasket.php'
 ?>
 
 
@@ -37,6 +37,7 @@ if (isset($_SESSION['userID'])) {
 
   <section class="products">
 
+    <h1 class="heading"><?php '%{$category}%' ?></h1>
 
     <div class="boxContainer">
 
