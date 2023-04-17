@@ -390,6 +390,7 @@ section {
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  margin-bottom: 4rem;
 }
 .homeProducts .slide:hover .fa-eye {
 left: 1rem;

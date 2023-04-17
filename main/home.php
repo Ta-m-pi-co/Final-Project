@@ -212,7 +212,26 @@ if (isset($_SESSION['userID'])) {
         650: {
           slidesPerView: 3,
         },
-        768: {
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+    });
+
+
+    var swiper = new Swiper(".productSlider", {
+      loop: true,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+        },
+        650: {
           slidesPerView: 3,
         },
         1024: {
