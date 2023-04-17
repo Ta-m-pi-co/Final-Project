@@ -18,11 +18,11 @@ if (isset($_POST['submit'])) {
   //update username 
   $username = $_POST['name'];
   $username = filter_var($username, FILTER_SANITIZE_STRING);
-  
+
   //update email
   $email = $_POST['email'];
   $email = filter_var($email, FILTER_SANITIZE_STRING);
-  
+
 
   $updateUser = $conn->prepare("UPDATE `users` SET name = ?, email =? WHERE id = ?");
   $updateUser->execute([$username, $email, $userID]);
@@ -95,6 +95,8 @@ if (isset($_POST['submit'])) {
   <section class="formContainer">
     <form action="" method="POST">
       <h3>Update Account Details</h3>
+
+      <input type="hidden" name="pPassword" value="<?= $fetch_profile['password']; ?>">
 
       <input type="text" name="name" maxlength="20" placeholder="enter username" class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name']; ?>" required>
 
