@@ -581,10 +581,8 @@ top: 1rem;
   width: 6rem;
 }
 
-
-
 .products .box .fa-eye,
-.products .box .fa-heart {
+.products .fa-heart {
   position: absolute;
   top: 1rem;
   height: 4.5rem;
@@ -605,13 +603,13 @@ top: 1rem;
   top: -10rem;
 }
 
-Products .box .fa-heart {
+.products .box .fa-heart {
   right: 1rem;
   top: -10rem;
 }
 
 .products .box .fa-eye:hover,
-.products .box .fa-heart:hover {
+.products .fa-heart:hover {
 background-color: black;
 color: var(--secondary-color);
 }
