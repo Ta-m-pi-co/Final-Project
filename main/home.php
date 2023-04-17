@@ -11,6 +11,7 @@ if (isset($_SESSION['userID'])) {
   $userID = '';
 }
 
+include '../components/wishlistBasket.php'
 
 ?>
 
@@ -112,9 +113,9 @@ if (isset($_SESSION['userID'])) {
           <img src="../images/icon-laptop.png" alt="">
           <h3>laptops</h3>
         </a>
-        <a href="category.php?category=mobile" class="swiper-slide" id="catSlide">
+        <a href="category.php?category=phone" class="swiper-slide" id="catSlide">
           <img src="../images/icon-mobile.png" alt="">
-          <h3>smartphones</h3>
+          <h3>Phones</h3>
         </a>
 
 
@@ -143,6 +144,11 @@ if (isset($_SESSION['userID'])) {
         ?>
 
             <form action="" method="post" class="slide swiper-slide">
+              <input type="hidden" name="productID" value="<?= $fetchProducts['id']; ?>">
+              <input type="hidden" name="name" value="<?= $fetchProducts['name']; ?>">
+              <input type="hidden" name="price" value="<?= $fetchProducts['price']; ?>">
+              <input type="hidden" name="image" value="<?= $fetchProducts['image1']; ?>">
+
               <button type="submit" name="addToWishlist" class="far fa-heart"></button>
               <a href="itemView.php?productID=<?= $fetchProducts['id']; ?>" class="fas fa-eye"></a>
               <img src="../images/<?= $fetchProducts['image1']; ?>" alt="" class="image">
