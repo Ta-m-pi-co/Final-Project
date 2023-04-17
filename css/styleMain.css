@@ -229,7 +229,7 @@ section {
 
 @keyframes fadeIn {
   0% {
-    transform: translateY(1.5rem);
+    transform: translateY(-1.5rem);
   }
 }
 
@@ -561,6 +561,7 @@ top: 1rem;
   }
   .header .flex .navbar.active a{
     border-bottom: var(--border);
+    text-align: center;
   }
 
   .header .flex .navbar a {
