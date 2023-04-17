@@ -37,6 +37,9 @@ include '../components/wishlistBasket.php'
 
   <section class="products">
 
+    <?php
+    $category = $_GET['category'];
+    ?>
     <h1 class="heading">
       <?= $category ?>
     </h1>
