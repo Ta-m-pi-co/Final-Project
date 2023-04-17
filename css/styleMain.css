@@ -123,10 +123,7 @@ section {
   font-size: 1.3rem;
 }
 
-.header .flex .icons #mIcon{
-  align-items: center;
-  text-align: center;
-}
+
 
 /*messages*/
 .message {
@@ -201,6 +198,8 @@ section {
   cursor: pointer;
   color: var(--light-color);
   margin-left: 1.2rem;
+  text-align: center;
+  align-items: center;
 }
 
 .header .flex .icons > *:hover {
