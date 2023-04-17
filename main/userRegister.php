@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 
       $insertUser->execute([$name, $email, $confirmPassword]);
 
-      $message[] = 'new admin created successfully';
+      $message[] = 'Thank You For Signing Up!';
     }
   }
 }
@@ -95,8 +95,8 @@ if (isset($_POST['submit'])) {
 
 
 
-    <?php include '../components/footer.php'; ?>
-    <script src="../javascript/main.js"></script>
+  <?php include '../components/footer.php'; ?>
+  <script src="../javascript/main.js"></script>
 </body>
 
 </html>
