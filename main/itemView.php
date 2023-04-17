@@ -68,15 +68,10 @@ if (isset($_SESSION['userID'])) {
 
 
           <div class="content">
-
             <div class="name"><?= $fetchProducts['name']; ?></div>
-
             <div class="flex">
-
               <div class="price">£<span><?= $fetchProducts['price']; ?></div>
-
               <input type="number" name="qty" class="qty" min="1" max="99" value="1" onkeypress="if(this.value.length == 2) return false">
-
             </div>
 
             <div class="details">
