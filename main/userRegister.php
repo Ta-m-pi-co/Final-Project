@@ -88,7 +88,7 @@ if (isset($_POST['submit'])) {
       <a href="userLogin.php" class="optionBtn">Login Now</a>
     </form>
 
-
+  </section>
 
 
 
