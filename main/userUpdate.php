@@ -45,9 +45,10 @@ if (isset($_POST['submit'])) {
   $confirmNPassword = sha1($_POST['confirmNPassword']);
   $confirmNPassword = filter_var($confirmNPassword, FILTER_SANITIZE_STRING);
 
-  if ($oPassword == $empty_pass) {
+  /* if ($oPassword == $empty_pass) {
     $message[] = 'enter old password';
-  } elseif ($oPassword != $pPassword) {
+  } else */
+  if ($oPassword != $pPassword) {
 
     $message[] = 'old password does not match';
   } elseif ($nPassword != $confirmNPassword) {
