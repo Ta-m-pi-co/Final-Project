@@ -701,7 +701,7 @@ color: var(--black);
   color: var(--black);
   line-height: 2;
   margin: .5rem;
-  border: thin black;
+  border: 0.1rem solid black;
   background-color: var(--light-bg);
 }
 
