@@ -390,7 +390,7 @@ section {
 .homeFilter #catSlide:hover{
   background-color: rgb(62, 33, 70);
   transform: scale(0.8);
-  transition: .2s linear;
+  transition: .3s linear;
 }
 
 .homeFilter #catSlide:hover img{
