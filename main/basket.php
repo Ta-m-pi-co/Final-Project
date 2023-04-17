@@ -9,6 +9,8 @@ if (isset($_SESSION['userID'])) {
   $userID = $_SESSION['userID'];
 } else {
   $userID = '';
+
+  header('location:home.php');
 }
 
 

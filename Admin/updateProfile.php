@@ -41,8 +41,7 @@ if (isset($_POST['submit'])) {
   } elseif ($oPassword != $pPassword) {
 
     $message[] = 'old password does not match';
-
-  }elseif ($nPassword != $confirmnPassword) {
+  } elseif ($nPassword != $confirmnPassword) {
 
     $message[] = 'new password does not match';
   } else {
@@ -96,9 +95,9 @@ if (isset($_POST['submit'])) {
 
       <input type="password" name="oPassword" maxlength="20" placeholder="enter old password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
 
-      <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="nPassword" maxlength="20" placeholder="enter new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{7,16}$">
 
-      <input type="password" name="confirmnPassword" maxlength="20" placeholder="confirm new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="confirmnPassword" maxlength="20" placeholder="confirm new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{7,16}$">
 
       <input type="submit" value="Update" name="submit" class="btn">
 
