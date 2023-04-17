@@ -10,7 +10,7 @@ if (isset($_SESSION['userID'])) {
 } else {
   $userID = '';
 }
-
+include '../components/wishlistBasket.php';
 
 ?>
 
