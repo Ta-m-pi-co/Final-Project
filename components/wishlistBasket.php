@@ -15,7 +15,7 @@ if (isset($_POST['addToWishlist'])) {
     $image = $_POST['image'];
     $image = filter_var($image, FILTER_SANITIZE_STRING);
 
-    $checkWishlistNumber = $conn->prepare("SELECT * FROM `wishlist` WHERE name = ? AND userID = ? ");
+    $checkWishlistNumber = $conn->prepare("SELECT * FROM `wishlist` WHERE name = ? AND userID = ?");
     $checkWishlistNumber->execute([$name, $userID]);
 
     $checkBasketNumber = $conn->prepare("SELECT * FROM `cart` WHERE name = ? AND userID = ? ");
@@ -26,10 +26,10 @@ if (isset($_POST['addToWishlist'])) {
     } elseif ($checkBasketNumber->rowCount() > 0) {
       $message[] = 'already in basket';
     } else {
-      $insertWishlist = $conn->prepare("INSERT INTO `wishlist` (userID, productID, name, price, image) VALUES(?,?,?,?,?)");
+      $insertWishlist = $conn->prepare("INSERT INTO `wishlist`(userID, productID, name, price, image) VALUES(?,?,?,?,?)");
       $insertWishlist->execute([$userID, $productID, $name, $price, $image]);
 
-    
+
       $message[] = 'added to wishlist';
     }
   }
@@ -64,15 +64,14 @@ if (isset($_POST['addToBasket'])) {
       $checkWishlistNumber = $conn->prepare("SELECT * FROM `wishlist` WHERE name = ? AND userID = ? ");
       $checkWishlistNumber->execute([$name, $userID]);
 
-      if($checkWishlistNumber->rowCount() > 0){
+      if ($checkWishlistNumber->rowCount() > 0) {
         $deleteWishlist = $conn->prepare("DELETE FROM `wishlist` WHERE name = ? AND userID = ?");
         $deleteWishlist->execute([$name, $userID]);
       }
 
-      $insertBasket = $conn->prepare("INSERT INTO `cart` (userID, productID, name, price, qty, image) VALUES(?,?,?,?,?,?)");
+      $insertBasket = $conn->prepare("INSERT INTO `cart`(userID, productID, name, price, qty, image) VALUES(?,?,?,?,?,?)");
       $insertBasket->execute([$userID, $productID, $name, $price, $qty, $image]);
       $message[] = 'added to basket';
     }
   }
 }
-?>
