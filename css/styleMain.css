@@ -397,13 +397,7 @@ section {
   overflow: hidden;
   margin-bottom: 4rem;
 }
-.homeProducts .slide:hover .fa-eye {
-left: 1rem;
-}
 
-.homeProducts .slide:hover .fa-heart {
-  right: 1rem;
-  }
 .homeProducts .slide .image{
   height: 20rem;
   width: 100%;
@@ -457,11 +451,13 @@ left: 1rem;
 }
 
 .homeProducts .slide .fa-eye{
-  left:-10rem;
+  /*left:-10rem;*/
+  top: -10rem;
 }
 
 .homeProducts .fa-heart {
-  right: -10rem;
+  /*right: -10rem;*/
+  top: -10rem;
 }
 
 .homeProducts .slide .fa-eye:hover,
@@ -470,6 +466,13 @@ background-color: black;
 color: var(--secondary-color);
 }
 
+.homeProducts .slide:hover .fa-eye {
+left: 1rem;
+}
+
+.homeProducts .slide:hover .fa-heart {
+  right: 1rem;
+  }
 /* media queries */
 
 @media (max-width: 991px) {
