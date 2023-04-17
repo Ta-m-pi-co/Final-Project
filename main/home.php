@@ -130,7 +130,7 @@ if (isset($_SESSION['userID'])) {
   <section class="homeProducts">
     <h1 class="heading">Products</h1>
 
-    <div class="productSlider">
+    <div class=" swiper productSlider">
 
       <div class="swiper-wrapper">
 
@@ -142,7 +142,7 @@ if (isset($_SESSION['userID'])) {
           while ($fetchProducts = $selectProducts->fetch(PDO::FETCH_ASSOC)) {
         ?>
 
-            <form action="" method="post" class="slide">
+            <form action="" method="post" class="slide swiper-slide">
               <button type="submit" name="addToWishlist" class="far fa-heart"></button>
               <a href="qView.php?productID=<?= $fetchProducts['id']; ?>" class="fas fa-eye"></a>
               <img src="../images/<?= $fetchProducts['image1']; ?>" alt="" class="image">
@@ -169,6 +169,8 @@ if (isset($_SESSION['userID'])) {
 
 
       </div>
+
+      <div class="swiper-pagination"></div>
 
     </div>
 

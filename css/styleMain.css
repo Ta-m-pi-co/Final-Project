@@ -389,8 +389,15 @@ section {
   box-shadow: var(--box-shadow);
   padding: 2rem;
   position: relative;
+  overflow: hidden;
+}
+.homeProducts .slide:hover .fa-eye {
+left: 1rem;
 }
 
+.homeProducts .slide:hover .fa-heart {
+  right: 1rem;
+  }
 .homeProducts .slide .image{
   height: 20rem;
   width: 100%;
@@ -401,7 +408,6 @@ section {
 .homeProducts .slide .name{
   font-size: 2rem;
   color: var(--black);
-  
 }
 
 .homeProducts .slide .flex{
@@ -412,7 +418,7 @@ section {
 
 .homeProducts .slide .flex .price{
   font-size: 2rem;
-  color: var(--main-color);
+  color: var(--black);
   margin-right: auto;
 }
 
@@ -441,14 +447,15 @@ section {
   text-align: center;
   cursor: pointer;
   color: var(--black);
+  transition: .3s linear;
 }
 
 .homeProducts .slide .fa-eye{
-  left:1rem;
+  left:-10rem;
 }
 
 .homeProducts .fa-heart {
-  right: 1rem;
+  right: -10rem;
 }
 
 .homeProducts .slide .fa-eye:hover,
