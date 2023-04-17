@@ -27,6 +27,7 @@ if (isset($_POST['submit'])) {
   $updateUser = $conn->prepare("UPDATE `users` SET name = ?, email =? WHERE id = ?");
   $updateUser->execute([$username, $email, $userID]);
 
+  $message[] = 'username and email updated successfully!';
   //update user password
   $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
   //$selectOPassword = $conn->prepare("SELECT password FROM `adminUsers` WHERE id = ?");
@@ -58,14 +59,15 @@ if (isset($_POST['submit'])) {
 
     if ($nPassword != $empty_pass) {
 
+
       $updateUserPassword = $conn->prepare("UPDATE `users` SET password = ? WHERE id = ?");
 
       $updateUserPassword->execute([$confirmNPassword, $userID]);
 
-      $message[] = "password changed";
+      $message[] = "Password Updated!";
     } else {
 
-      $message[] = 'no new password entered';
+      $message[] = 'No New Password Entered';
     }
   }
 }
