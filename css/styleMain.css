@@ -625,7 +625,7 @@ top: 1rem;
 
   /*Item View*/
 
-  .itemView .heading {
+.itemView .heading {
     text-transform: capitalize;
   }
 
@@ -655,14 +655,14 @@ top: 1rem;
   object-fit: contain;
 }
 
-itemView .box .imageContainer .subImages{
+.itemView .box .imageContainer .subImages{
   display: flex;
   justify-content: center;
   margin-top: 2rem;
   gap: 1rem;
 }
 
-itemView .box .imageContainer .subImages img{
+.itemView .box .imageContainer .subImages img{
 height: 7rem;
 width: 10rem;
 border: var(--border);
