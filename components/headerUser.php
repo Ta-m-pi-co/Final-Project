@@ -70,8 +70,6 @@ if (isset($message)) {
         <a href="../main/userUpdate.php" class="btn">Update Profile</a>
 
         <div class="flexBtn">
-          <a href="../main/userLogin.php" class="optionBtn">Login</a>
-
           <a href="../main/userRegister.php" class="optionBtn">Register</a>
 
         </div>

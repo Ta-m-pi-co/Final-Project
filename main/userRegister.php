@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 
       $insertUser->execute([$name, $email, $confirmPassword]);
 
-      $message[] = 'Thank You For Signing Up!';
+      $message[] = 'Welcome to Crowns';
     }
   }
 }

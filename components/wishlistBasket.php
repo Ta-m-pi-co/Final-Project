@@ -28,6 +28,8 @@ if (isset($_POST['addToWishlist'])) {
     } else {
       $insertWishlist = $conn->prepare("INSERT INTO `wishlist` (userID, productID, name, price, image) VALUES(?,?,?,?,?)");
       $insertWishlist->execute([$userID, $productID, $name, $price, $image]);
+
+    
       $message[] = 'added to wishlist';
     }
   }
