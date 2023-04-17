@@ -835,6 +835,9 @@ color: var(--black);
     line-height: initial;
     padding: 1rem 0;
   }
+  .footer {
+    bottom: 0;
+  }
 }
 
 @media (max-width: 450px) {
