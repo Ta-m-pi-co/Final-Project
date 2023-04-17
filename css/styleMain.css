@@ -123,8 +123,9 @@ section {
   font-size: 1.3rem;
 }
 
-#mIcon{
+.header .flex .icons #mIcon{
   align-items: center;
+  text-align: center;
 }
 
 /*messages*/
