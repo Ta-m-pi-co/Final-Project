@@ -95,7 +95,7 @@ include '../components/wishlistBasket.php'
 
       <div class="swiper-wrapper">
 
-        <a href="category.php?category=camera" class="swiper-slide" id="catSlide">
+        <a href="category.php?category=cameras" class="swiper-slide" id="catSlide">
           <img src="../images/icon-camera.png" alt="">
           <h3>cameras</h3>
         </a>
