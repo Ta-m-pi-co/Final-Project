@@ -482,6 +482,50 @@ top: 1rem;
 .homeProducts .slide:hover .fa-heart {
   top: 1rem;
   }
+
+
+/*login sign-up*/
+
+.formContainer form{
+  max-width: 50rem;
+  margin: 0 auto;
+  border: var(--border);
+  border-radius: 1rem;
+  padding:2rem;
+  background-color: var(--white);
+  
+}
+
+.formContainer form h3{
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.formContainer  form .box{
+  width: 100%;
+  margin:1rem 0;
+  font-size: 1.7rem;
+  color: var(--black);
+  padding: 1.4rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem var(--main-color);
+  background-color: var(--light-bg);
+}
+
+.formContainer form p {
+  font-size: 2rem;
+  color: var(--light-color);
+  margin-top: 1rem;
+  font-weight: bold;
+  padding: .5rem;
+}
+
+.formContainer form .optionBtn {
+  border-radius: 45%;
+}
 /* media queries */
 
 @media (max-width: 991px) {

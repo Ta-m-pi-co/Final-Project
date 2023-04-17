@@ -143,7 +143,7 @@ include '../components/wishlistBasket.php'
           while ($fetchProducts = $selectProducts->fetch(PDO::FETCH_ASSOC)) {
         ?>
 
-            <form action="" method="post" class="slide swiper-slide">
+            <form action="" method="POST" class="slide swiper-slide">
               <input type="hidden" name="productID" value="<?= $fetchProducts['id']; ?>">
               <input type="hidden" name="name" value="<?= $fetchProducts['name']; ?>">
               <input type="hidden" name="price" value="<?= $fetchProducts['price']; ?>">

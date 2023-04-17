@@ -36,6 +36,17 @@ if (isset($_SESSION['userID'])) {
 
 
 
+  <section class="formContainer">
+    <form action="" method="POST">
+      <h3>Register</h3>
+      <input type="email" class="box" placeholder="enter email" name="email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')" required>
+      <input type="password" class="box" placeholder="enter password" name="password" maxlength="20" oninput="this.value = this.value.replace(/\s/g, '')" required>
+      <input type="submit" value="login" class="btn" name="submit">
+
+
+      <p>Already have an account?</p>
+      <a href="userLogin.php" class="optionBtn">Login Now</a>
+    </form>
 
 
 
@@ -43,8 +54,9 @@ if (isset($_SESSION['userID'])) {
 
 
 
-  <?php include '../components/footer.php'; ?>
-  <script src="../javascript/main.js"></script>
+
+    <?php include '../components/footer.php'; ?>
+    <script src="../javascript/main.js"></script>
 </body>
 
 </html>

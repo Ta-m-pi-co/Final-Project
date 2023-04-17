@@ -11,7 +11,25 @@ if (isset($_SESSION['userID'])) {
   $userID = '';
 }
 
+if (isset($_POST['submit'])) {
 
+  $email = $_POST['email'];
+  $email = filter_var($name, FILTER_SANITIZE_STRING);
+
+  $password = sha1($_POST['password']);
+  $password = filter_var($password, FILTER_SANITIZE_STRING);
+
+  $selectUser = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+  $selectUser->execute([$email, $password]);
+  $row = $selectUser->fetch(PDO::FETCH_ASSOC);
+
+  if ($selectUser->rowCount() > 0) {
+    $_SESSION['userID'] = $row['id'];
+    header('location:home.php');
+  } else {
+    $message[] = 'Incorrect email or Password! Try Again.';
+  }
+}
 ?>
 
 
@@ -34,7 +52,23 @@ if (isset($_SESSION['userID'])) {
 
   <?php include '../components/headerUser.php'; ?>
 
+  <section class="formContainer">
+    <form action="" method="POST">
+      <h3>Login</h3>
+      <input type="email" class="box" placeholder="enter email" name="email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')" required>
+      <input type="password" class="box" placeholder="enter password" name="password" maxlength="20" oninput="this.value = this.value.replace(/\s/g, '')" required>
+      <input type="submit" value="login" class="btn" name="submit">
 
+
+      <p>Are You New Here?</p>
+      <a href="userRegister.php" class="optionBtn">sign-up!</a>
+    </form>
+
+
+
+
+
+  </section>
 
 
 
