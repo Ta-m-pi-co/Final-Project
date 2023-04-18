@@ -45,7 +45,6 @@ if (isset($_SESSION['userID'])) {
     <div class="boxContainer">
 
       <?php
-      $category = $_GET['category'];
       $selectProducts = $conn->prepare("SELECT * FROM `products`");
       $selectProducts->execute();
 
