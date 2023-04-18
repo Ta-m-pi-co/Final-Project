@@ -101,8 +101,7 @@ if (isset($_POST['updateQty'])) {
           $TotalPrice += $subTotal;
         }
       } else {
-        echo '<p class="empty">Nothing in Basket. </p>
-        <a href="store.php" class="optionBtn">Continue Shopping?</a>';
+        echo '<p class="empty">Nothing in Basket. </p>';
       }
       ?>
 
