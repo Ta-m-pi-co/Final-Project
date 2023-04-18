@@ -11,7 +11,7 @@ if (isset($_SESSION['userID'])) {
   $userID = '';
   header('location:home.php');
 }
-
+include '../components/wishlistBasket.php'
 
 ?>
 

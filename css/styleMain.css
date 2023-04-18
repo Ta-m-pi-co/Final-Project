@@ -641,6 +641,58 @@ top: 7rem;
   }
 
 /*wishlist*/
+.wishlist .boxContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.wishlist .boxContainer .box{
+  background-color: var(--white);
+  border-radius: .5rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+}
+
+.wishlist .boxContainer .box .image{
+  height: 20rem;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.wishlist .boxContainer .box .name{
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.wishlist .boxContainer .box .flex{
+  display: flex;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.wishlist .boxContainer .box .flex .price{
+  font-size: 2rem;
+  color: var(--black);
+  margin-right: auto;
+}
+
+.wishlist .boxContainer .box .flex .qty{
+  font-size: 1.8rem;
+  border: var(--qtyBorder);
+  border-radius: .5rem;
+  padding: 1.2rem 1.4rem;
+  color: var(--black);
+  width: 6rem;
+}
 .wishlist .boxContainer .box .fa-eye,
 .wishlist .boxContainer .fa-heart-broken {
   position: absolute;
