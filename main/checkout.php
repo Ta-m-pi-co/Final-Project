@@ -24,9 +24,9 @@ if (isset($_POST['order'])) {
   $address = $_POST['address1'] . ', ' . $_POST['address2'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ' - ' . $_POST['postCode'];
   $address = filter_var($address, FILTER_SANITIZE_STRING);
   $totalProducts = $_POST['totalProducts'];
-  
+
   $totalPrice = $_POST['totalPrice'];
-  
+
 
   $checkBasket = $conn->prepare("SELECT * FROM `cart` WHERE userID = ?");
   $checkBasket->execute([$userID]);
@@ -84,12 +84,12 @@ if (isset($_POST['order'])) {
 
         <div class="inputBox">
           <span>Phone Number:</span>
-          <input type="number" name="telephone" min="0" max="9999999999" required onkeypress="if(this.value.length == 10) return false;" class="box" placeholder="enter telephone number">
+          <input type="number" name="telephone" min="0" max="9999999999999" required onkeypress="if(this.value.length == 13) return false;" class="box" placeholder="enter telephone number">
         </div>
 
         <div class="inputBox">
           <span>Email:</span>
-          <input type="email" name="email" maxlength="20" required class="box" placeholder="enter your email">
+          <input type="email" name="email" maxlength="30" required class="box" placeholder="enter your email">
         </div>
 
         <div class="inputBox">
