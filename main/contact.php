@@ -17,17 +17,17 @@ if (isset($_POST['send'])) {
   $telephone = filter_var($telephone, FILTER_SANITIZE_STRING);
   $email = $_POST['email'];
   $email = filter_var($email, FILTER_SANITIZE_STRING);
-  $messages = $_POST['messages'];
-  $messages = filter_var($messages, FILTER_SANITIZE_STRING);
+  $msg = $_POST['msg'];
+  $msg = filter_var($msg, FILTER_SANITIZE_STRING);
 
   $selectMessages = $conn->prepare("SELECT * FROM `messages` WHERE name = ? AND email = ? AND telephone = ? AND message = ?");
-  $selectMessages->execute([$name, $email, $telephone, $messages]);
+  $selectMessages->execute([$name, $email, $telephone, $msg]);
 
   if ($selectMessages->rowCount() > 0) {
     $message[] = 'message sent';
   } else {
     $insertMessages = $conn->prepare("INSERT INTO `messages`(name, email, telephone, message) VALUES(?,?,?,?)");
-    $insertMessages->execute([$name, $email, $telephone, $messages]);
+    $insertMessages->execute([$name, $email, $telephone, $msg]);
     $message[] = 'Thank You For The Message!';
   }
 }
@@ -62,7 +62,7 @@ if (isset($_POST['send'])) {
       <input type="number" name="telephone" placeholder="Enter Phone Number" max="9999999999" min="0" class="box" onkeypress="if(this.value.length == 10) return false;">
       <input type="email" name="email" placeholder="Enter Email" required maxlength="50" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 
-      <textarea name="messages" class="box" cols="30" rows="10" placeholder="Leave a Message for us!"></textarea>
+      <textarea name="msg" class="box" cols="30" rows="10" placeholder="Leave a Message for us!"></textarea>
       <input type="submit" value="Send message" class="btn" name="send">
 
 
