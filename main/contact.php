@@ -17,17 +17,17 @@ if (isset($_POST['send'])) {
   $telephone = filter_var($telephone, FILTER_SANITIZE_STRING);
   $email = $_POST['email'];
   $email = filter_var($email, FILTER_SANITIZE_STRING);
-  $message = $_POST['message'];
-  $message = filter_var($message, FILTER_SANITIZE_STRING);
+  $messages = $_POST['message'];
+  $messages = filter_var($messages, FILTER_SANITIZE_STRING);
 
-  $selectMessage = $conn->prepare("SELECT * FROM `messages` WHERE name = ? AND email = ? AND telephone = ? AND message = ?");
-  $selectMessage->execute([$name, $email, $telephone, $message]);
+  $selectMessages = $conn->prepare("SELECT * FROM `messages` WHERE name = ? AND email = ? AND telephone = ? AND message = ?");
+  $selectMessages->execute([$name, $email, $telephone, $message]);
 
   if ($selectMessage->rowCount() > 0) {
     $message[] = 'message sent';
   } else {
-    $insertMessage = $conn->prepare("INSERT INTO `messages`(name, email, telephone, message) VALUES(?,?,?,?)");
-    $insertMessage->execute([$name, $email, $telephone, $message]);
+    $insertMessages = $conn->prepare("INSERT INTO `messages`(name, email, telephone, message) VALUES(?,?,?,?)");
+    $insertMessages->execute([$name, $email, $telephone, $message]);
     $message[] = 'Thank You For The Message!';
   }
 }
