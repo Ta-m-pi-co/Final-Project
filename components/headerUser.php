@@ -72,7 +72,7 @@ if (isset($message)) {
           <a href="wishlistMain.php" class="optionBtn">Wishlist</a>
         </div>
 
-        <a href="../components/logoutUser.php" onclick=" return confirm('Are you sure you want to logout?');" class="deleteBtn">Logout</a>
+        <a href="../components/logoutUser.php" class="deleteBtn">Logout</a>
 
       <?php
       } else {
