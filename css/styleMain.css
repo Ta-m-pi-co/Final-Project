@@ -640,6 +640,49 @@ top: 7rem;
   top: 1rem;
   }
 
+/*wishlist*/
+.wishlist .boxContainer .box .fa-eye,
+.wishlist .boxContainer .fa-heart-broken {
+  position: absolute;
+  top: 1rem;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.2rem;
+  font-size: 2rem;
+  border: var(--border);
+  background-color: var(--white);
+  border-radius: .5rem;
+  text-align: center;
+  cursor: pointer;
+  color: var(--black);
+  transition: .3s linear;
+}
+
+.wishlist .boxContainer .box .fa-eye{
+  right: 1rem;
+  top: -10rem;
+}
+
+.wishlist .boxContainer .box .fa-heart-broken {
+  right: 1rem;
+  top: -10rem;
+}
+
+.wishlist .boxContainer .box .fa-eye:hover{
+background-color: black;
+color: var(--secondary-color);
+}
+.wishlist .boxContainer .fa-heart-broken:hover{
+  background-color: black;
+color: var(--red);}
+
+.wishlist .boxContainer .box:hover .fa-eye {
+top: 7rem;
+}
+
+.wishlist .boxContainer .box:hover .fa-heart-broken {
+  top: 1rem;
+  }
 
   /*Item View*/
 
