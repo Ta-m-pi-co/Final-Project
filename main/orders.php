@@ -37,7 +37,7 @@ if (isset($_SESSION['userID'])) {
 
 
   <section class="displayOrders">
-
+    <h1 class="heading">Your Orders</h1>
     <div class="boxContainer">
       <?php
       $displayOrders = $conn->prepare("SELECT * FROM `orders` WHERE userID = ?");
