@@ -68,9 +68,8 @@ if (isset($message)) {
         <a href="../main/userUpdate.php" class="btn">Update Profile</a>
 
         <div class="flexBtn">
-          <a href="../main/userRegister.php" class="optionBtn">Register</a>
           <a href="../main/orders.php" class="optionBtn">Orders</a>
-          <a href="wishlistMain.php" class="optionBtn" style="background-color: pink;">Wishlist</a>
+          <a href="wishlistMain.php" class="optionBtn">Wishlist</a>
         </div>
 
         <a href="../components/logoutUser.php" onclick=" return confirm('Are you sure you want to logout?');" class="deleteBtn">Logout</a>
