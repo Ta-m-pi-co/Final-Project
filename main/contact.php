@@ -35,7 +35,18 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/headerUser.php'; ?>
 
 
+<section class="formContainer">
+  <form action="" class="box" method="post">
+    <input type="text" name="name" placeholder="Enter Name" required maxlength="20" class="box">
+    <input type="number" name="telephone" placeholder="Enter Phone Number" max="9999999999" min="0" class="box" onkeypress="if(this.value.length == 10) return false;">
+    <input type="email" name="email" placeholder="Enter Email" required maxlength="50" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 
+
+
+
+  </form>
+
+</section>
 
 
 

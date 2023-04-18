@@ -55,8 +55,8 @@ if (isset($_POST['submit'])) {
   <section class="formContainer">
     <form action="" method="POST">
       <h3>Login</h3>
-      <input type="email" class="box" placeholder="enter email" name="email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')" required>
-      <input type="password" class="box" placeholder="enter password" name="password" maxlength="20" oninput="this.value = this.value.replace(/\s/g, '')" required>
+      <input type="email" class="box" placeholder="enter email" name="email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+      <input type="password" class="box" placeholder="enter password" name="password" maxlength="20" oninput="this.value = this.value.replace(/\s/g, '')" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{7,16}$">
       <input type="submit" value="login" class="btn" name="submit">
 
 
