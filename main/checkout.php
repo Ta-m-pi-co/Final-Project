@@ -11,6 +11,36 @@ if (isset($_SESSION['userID'])) {
   $userID = '';
   header('location:home.php');
 }
+if (isset($_POST['order'])) {
+  $name = $_POST['name'];
+  $name = filter_var($name, FILTER_SANITIZE_STRING);
+  $telephone = $_POST['telephone'];
+  $telephone = filter_var($telephone, FILTER_SANITIZE_STRING);
+  $email = $_POST['email'];
+  $email = filter_var($email, FILTER_SANITIZE_STRING);
+  $method = $_POST['method'];
+  $method = filter_var($method, FILTER_SANITIZE_STRING);
+  $address = $_POST['address1'] . ', ' . $_POST['address2'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ' - ' . $_POST['postCode'];
+  $address = filter_var($address, FILTER_SANITIZE_STRING);
+  $totalProducts = $_POST['totalProducts'];
+  $totalProducts = filter_var($totalProducts, FILTER_SANITIZE_STRING);
+  $totalPrice = $_POST['totalPrice'];
+  $totalPrice = filter_var($totalPrice, FILTER_SANITIZE_STRING);
+
+  $checkBasket = $conn->prepare("SELECT * FROM `cart` WHERE userID = ?");
+  $checkBasket->execute([$userID]);
+
+  if ($checkBasket->rowCount() > 0) {
+    $insertOrder = $conn->prepare("INSERT INTO `orders`(userID, name, telephone, email, method, address, totalProducts, totalPrice) VALUES(?,?,?,?,?,?,?,?)");
+    $insertOrder->execute([$userID, $name, $telephone, $email, $method, $address, $totalProducts, $totalPrice]);
+    $message[] = 'order placed';
+
+    $deleteBasket = $conn->prepare("DELETE FROM `cart` WHERE userID = ?");
+    $deleteBasket->execute([$userID])
+  } else {
+    $message[] = 'the basket is empty';
+  }
+}
 
 
 ?>
@@ -92,6 +122,7 @@ if (isset($_SESSION['userID'])) {
         </div>
 
       </div>
+      <input type="submit" value="place order" class="btn" name="order <?= ($totalPrice > 1) ? '' : 'disabled'; ?>">
     </form>
 
     <h1 class="heading">Basket</h1>
