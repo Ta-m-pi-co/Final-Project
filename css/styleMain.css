@@ -779,6 +779,145 @@ top: 7rem;
   top: 1rem;
   }
 
+  /*basket*/
+.basket .boxContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.basket .totalPrice {
+  margin: 0 auto;
+  margin-top: 2rem;
+  max-width: 50rem;
+  background-color: white;
+  border: var(--border);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+}
+.basket .totalPrice p{
+  font-size: 2.5rem;
+  color: var(--light-color);
+}
+.basket .totalPrice p span{
+  color: var(--red);
+  margin-bottom: 2rem;
+}
+.basket .boxContainer .box{
+  background-color: var(--white);
+  border-radius: .5rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+}
+
+.basket .boxContainer .box .image{
+  height: 20rem;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.basket .boxContainer .box .name{
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.basket .boxContainer .box .flex{
+  display: flex;
+  margin: 1rem 0;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.basket .boxContainer .box .flex .price{
+  font-size: 2rem;
+  color: var(--black);
+  margin-right: auto;
+}
+
+.basket .boxContainer .box .flex .qty{
+  font-size: 1.8rem;
+  border: var(--qtyBorder);
+  border-radius: .5rem;
+  padding: 1.2rem 1.4rem;
+  color: var(--black);
+  width: 6rem;
+}
+.basket .boxContainer .box .fa-eye,
+.basket .boxContainer .fa-trash-alt{
+  position: absolute;
+  top: 1rem;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.2rem;
+  font-size: 2rem;
+  border: var(--border);
+  background-color: var(--white);
+  border-radius: .5rem;
+  text-align: center;
+  cursor: pointer;
+  color: var(--black);
+  transition: .3s linear;
+}
+
+.basket .boxContainer .box .fa-eye{
+  right: 1rem;
+  top: -10rem;
+}
+
+.basket .boxContainer .box .fa-trash-alt {
+  right: 1rem;
+  top: -10rem;
+}
+
+.basket .boxContainer .box .fa-eye:hover{
+background-color: black;
+color: var(--secondary-color);
+}
+.basket .boxContainer .fa-trash-alt:hover{
+  background-color: black;
+color: var(--red);}
+
+.basket .boxContainer .box:hover .fa-eye {
+top: 7rem;
+}
+
+.basket .boxContainer .box:hover .fa-trash-alt {
+  top: 1rem;
+}
+
+.basket .boxContainer .box .flex .fa-pencil{
+width: 5rem;
+border-radius: .5rem;
+color: var(--main-color);
+font-size: 1.8rem;
+cursor: pointer;
+height: 5rem;
+}
+
+.basket .boxContainer .box .flex .fa-pencil:hover{
+  color: green;
+
+}
+.basket .boxContainer .box .subTotal{
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--black);
+}
+.basket .boxContainer .box .subTotal span{
+  color: green;;
+}
+
   /*Item View*/
 
 .itemView .heading {
