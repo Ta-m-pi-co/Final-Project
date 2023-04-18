@@ -1180,8 +1180,8 @@ font-size: 1.8rem;
 
 /*orders*/
 .displayOrders .boxContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 33rem);
+  display: flex;
+ flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
   align-items: flex-start;
