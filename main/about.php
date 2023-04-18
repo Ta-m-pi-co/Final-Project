@@ -160,7 +160,6 @@ if (isset($_SESSION['userID'])) {
   <script>
     var swiper = new Swiper(".reviewSlides", {
       spaceBetween: 20,
-      loop: true,
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,

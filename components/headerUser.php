@@ -22,7 +22,6 @@ if (isset($message)) {
     <nav class="navbar">
       <a href="../main/home.php">Home</a>
       <a href="../main/store.php">Store</a>
-      <a href="../main/orders.php">Orders</a>
       <a href="../main/contact.php">Contact</a>
       <a href="../main/about.php">About</a>
 
@@ -71,7 +70,8 @@ if (isset($message)) {
 
         <div class="flexBtn">
           <a href="../main/userRegister.php" class="optionBtn">Register</a>
-
+          <a href="../main/orders.php" class="optionBtn">Orders</a>
+          <a href="wishlistMain.php" class="optionBtn" style="background-color: pink;">Wishlist</a>
         </div>
 
         <a href="../components/logoutUser.php" onclick=" return confirm('Are you sure you want to logout?');" class="deleteBtn">Logout</a>

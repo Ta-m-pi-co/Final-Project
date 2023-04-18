@@ -204,7 +204,6 @@ include '../components/wishlistBasket.php'
 
 
     var swiper = new Swiper(".filterSlider", {
-      loop: true,
       spaceBetween: 20,
       pagination: {
         el: ".swiper-pagination",
@@ -226,7 +225,6 @@ include '../components/wishlistBasket.php'
 
 
     var swiper = new Swiper(".productSlider", {
-      loop: true,
       spaceBetween: 20,
       pagination: {
         el: ".swiper-pagination",
