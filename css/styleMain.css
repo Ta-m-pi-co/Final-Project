@@ -1129,7 +1129,7 @@ color: var(--black);
 
 
 .checkout .totalPrice{
-  width: 100%;
+  width: 50%;
   padding: 1.5rem;
   margin: 4rem auto;
   text-align: center;
