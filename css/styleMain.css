@@ -78,7 +78,7 @@ section {
 .btn,
 .deleteBtn,
 .optionBtn {
-  display: block;
+  display: inline-block;
   margin-top: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
