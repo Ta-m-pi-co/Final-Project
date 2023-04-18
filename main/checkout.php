@@ -9,9 +9,10 @@ if (isset($_SESSION['userID'])) {
   $userID = $_SESSION['userID'];
 } else {
   $userID = '';
-  header('location:home.php');
+  header('location:userLogin.php');
 }
 if (isset($_POST['order'])) {
+
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
   $telephone = $_POST['telephone'];
@@ -23,9 +24,9 @@ if (isset($_POST['order'])) {
   $address = $_POST['address1'] . ', ' . $_POST['address2'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ' - ' . $_POST['postCode'];
   $address = filter_var($address, FILTER_SANITIZE_STRING);
   $totalProducts = $_POST['totalProducts'];
-  $totalProducts = filter_var($totalProducts, FILTER_SANITIZE_STRING);
+  
   $totalPrice = $_POST['totalPrice'];
-  $totalPrice = filter_var($totalPrice, FILTER_SANITIZE_STRING);
+  
 
   $checkBasket = $conn->prepare("SELECT * FROM `cart` WHERE userID = ?");
   $checkBasket->execute([$userID]);
@@ -97,7 +98,7 @@ if (isset($_POST['order'])) {
         </div>
         <div class="inputBox">
           <span>Address line 2:</span>
-          <input type="text" name="address2" maxlength="50" class="box">
+          <input type="text" name="address2" required maxlength="50" class="box">
         </div>
         <div class="inputBox">
           <span>City:</span>
@@ -122,7 +123,7 @@ if (isset($_POST['order'])) {
         </div>
 
       </div>
-      <input type="submit" value="place order" class="btn" name="order <?= ($totalPrice > 1) ? '' : 'disabled'; ?>">
+      <input type="submit" value="place order" class="btn" name="order">
     </form>
 
     <h1 class="heading">Basket</h1>
