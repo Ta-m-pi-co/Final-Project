@@ -36,7 +36,45 @@ if (isset($_SESSION['userID'])) {
 
 
 
+  <section class="displayOrders">
 
+    <div class="boxContainer">
+      <?php
+      $displayOrders = $conn->prepare("SELECT * FROM `orders` WHERE userID = ?");
+      $displayOrders->execute([$userID]);
+
+      if ($displayOrders->rowCount() > 0) {
+
+        while ($fetchOrders = $displayOrders->fetch(PDO::FETCH_ASSOC)) {
+
+      ?>
+          <div class="box">
+            <p>Order Placed: <span><?= $fetchOrders['dateOfOrder']; ?></span></p>
+            <p>Name: <span><?= $fetchOrders['name']; ?></span></p>
+            <p>Email: <span><?= $fetchOrders['email']; ?></span></p>
+            <p>Telephone: <span><?= $fetchOrders['telephone']; ?></span></p>
+            <p>Address: <span><?= $fetchOrders['address']; ?></span></p>
+            <p>Products Ordered: <span><?= $fetchOrders['totalProducts']; ?></span></p>
+            <p>Total Price: <span><?= $fetchOrders['totalPrice'] ?></span></p>
+            <p>payment method: <span><?= $fetchOrders['method']; ?></span></p>
+            <p>Order Status: <span style="color:<?php if ($fetchOrders['paymentStatus'] == 'pending') {
+                                                  echo 'orange';
+                                                } elseif ($fetchOrders['paymentStatus'] == 'cancelled') {
+                                                  echo 'red';
+                                                } else {
+                                                  echo 'green';
+                                                } ?> "><?= $fetchOrders['paymentStatus']; ?></span></p>
+          </div>
+
+      <?php
+        }
+      } else {
+        echo '<p class="empty">No orders Placed</p>';
+      }
+      ?>
+
+    </div>
+  </section>
 
 
 

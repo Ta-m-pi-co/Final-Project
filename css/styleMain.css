@@ -1178,6 +1178,44 @@ padding: 1.4rem;
 font-size: 1.8rem;
 }
 
+/*orders*/
+.displayOrders .boxContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+.displayOrders .boxContainer .box{
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 2rem;
+  padding-top: 1rem;
+}
+
+.displayOrders .boxContainer .box p{
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  font-size: 1.8rem;
+  color:var(--black);
+}
+
+.displayOrders .boxContainer .box p span {
+  color: var(--main-color);
+}
+
+.displayOrders .boxContainer .box .dropDown{
+  width: 100%;
+  border: var(--border);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  background-color: var(--light-bg);
+  padding: 1rem 1.4rem;
+  font-size: 2rem;
+  color: var(--black);
+}
 
 /* media queries */
 
