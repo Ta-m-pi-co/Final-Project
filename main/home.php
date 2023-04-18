@@ -151,7 +151,7 @@ include '../components/wishlistBasket.php'
 
               <button type="submit" name="addToWishlist" class="far fa-heart"></button>
               <a href="itemView.php?productID=<?= $fetchProducts['id']; ?>" class="fas fa-eye"></a>
-              <img src="../images/<?= $fetchProducts['image1']; ?>" alt="" class="image">
+              <a href="itemView.php?productID=<?= $fetchProducts['id']; ?>"><img src="../images/<?= $fetchProducts['image1']; ?>" alt="" class="image"></a>
               <div class="name"><?= $fetchProducts['name']; ?></div>
               <div class="flex">
 
