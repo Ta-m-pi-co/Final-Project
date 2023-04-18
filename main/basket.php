@@ -34,7 +34,7 @@ if (isset($_POST['updateQty'])) {
   $basketId = $_POST['basketId'];
   $qty = $_POST['qty'];
   $updateQty = $conn->prepare("UPDATE `cart` SET qty = ? WHERE id = ?");
-  $updateQty->execute($qty, $basketId);
+  $updateQty->execute([$qty, $basketId]);
   $message[] = 'item quantity updated successfully';
 }
 
