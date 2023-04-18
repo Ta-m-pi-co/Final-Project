@@ -39,7 +39,7 @@ if (isset($_SESSION['userID'])) {
 
 
     <h1 class="heading">
-      Products
+      All Products
     </h1>
 
     <div class="boxContainer">
