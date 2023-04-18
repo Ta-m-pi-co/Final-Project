@@ -796,6 +796,12 @@ color: var(--black);
   margin-top: 1rem;
 }
 
+/*Contact page*/
+.formContainer textarea {
+  height: 20rem;
+}
+
+
 /* media queries */
 
 @media (max-width: 991px) {

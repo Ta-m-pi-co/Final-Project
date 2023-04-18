@@ -10,7 +10,27 @@ if (isset($_SESSION['userID'])) {
 } else {
   $userID = '';
 }
+if (isset($_POST['send'])) {
+  $name = $_POST['name'];
+  $name = filter_var($name, FILTER_SANITIZE_STRING);
+  $telephone = $_POST['telephone'];
+  $telephone = filter_var($telephone, FILTER_SANITIZE_STRING);
+  $email = $_POST['email'];
+  $email = filter_var($email, FILTER_SANITIZE_STRING);
+  $message = $_POST['message'];
+  $message = filter_var($message, FILTER_SANITIZE_STRING);
 
+  $selectMessage = $conn->prepare("SELECT * FROM `messages` WHERE name = ? AND email = ? AND telephone = ? AND message = ?");
+  $selectMessage->execute([$name, $email, $telephone, $message]);
+
+  if ($selectMessage->rowCount() > 0) {
+    $message[] = 'message sent';
+  } else {
+    $insertMessage = $conn->prepare("INSERT INTO `messages`(name, email, telephone, message) VALUES(?,?,?,?)");
+    $insertMessage->execute([$name, $email, $telephone, $message]);
+    $message[] = 'Thank You For The Message!';
+  }
+}
 
 ?>
 
@@ -35,18 +55,22 @@ if (isset($_SESSION['userID'])) {
   <?php include '../components/headerUser.php'; ?>
 
 
-<section class="formContainer">
-  <form action="" class="box" method="post">
-    <input type="text" name="name" placeholder="Enter Name" required maxlength="20" class="box">
-    <input type="number" name="telephone" placeholder="Enter Phone Number" max="9999999999" min="0" class="box" onkeypress="if(this.value.length == 10) return false;">
-    <input type="email" name="email" placeholder="Enter Email" required maxlength="50" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+  <section class="formContainer">
+    <form action="" class="box" method="post">
+      <h3>Get in Contact!</h3>
+      <input type="text" name="name" placeholder="Enter Name" required maxlength="20" class="box">
+      <input type="number" name="telephone" placeholder="Enter Phone Number" max="9999999999" min="0" class="box" onkeypress="if(this.value.length == 10) return false;">
+      <input type="email" name="email" placeholder="Enter Email" required maxlength="50" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+      <textarea name="message" class="box" cols="30" rows="10" placeholder="Leave a Message for us!"></textarea>
+      <input type="submit" value="Send message" class="btn" name="send">
 
 
 
 
-  </form>
+    </form>
 
-</section>
+  </section>
 
 
 
