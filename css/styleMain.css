@@ -62,6 +62,7 @@ section {
   color: var(--black);
   font-size: 4rem;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .empty {
@@ -560,6 +561,7 @@ top: 7rem;
   position: relative;
   overflow: hidden;
   margin-bottom: 4rem;
+  text-transform: capitalize;
 }
 
 .products .boxContainer .box .image{
