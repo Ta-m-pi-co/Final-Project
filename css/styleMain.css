@@ -7,6 +7,7 @@
   --white: #fff;
   --red: rgb(209, 24, 24);
   --border: 0.2rem solid var(--black);
+  --qtyBorder: 0.1rem solid;
   --light-bg: #f5f5f5;
   --light-color: #777;
   --pink:#dd3fd0;
@@ -414,6 +415,7 @@ section {
   position: relative;
   overflow: hidden;
   margin-bottom: 4rem;
+  text-transform:capitalize;
 }
 
 .homeProducts .slide .image{
@@ -442,7 +444,7 @@ section {
 
 .homeProducts .slide .flex .qty{
   font-size: 1.8rem;
-  border: var(--border);
+  border: var(--qtyBorder);
   border-radius: .5rem;
   padding: 1.2rem 1.4rem;
   color: var(--black);
@@ -586,7 +588,7 @@ top: 7rem;
 
 .products .boxContainer .box .flex .qty{
   font-size: 1.8rem;
-  border: var(--border);
+  border: var(--qtyBorder);
   border-radius: .5rem;
   padding: 1.2rem 1.4rem;
   color: var(--black);
@@ -705,7 +707,7 @@ color: var(--black);
 
 .itemView .box .flex .qty {
   padding: 1.2rem 1.4rem;
-  border: var(--border);
+  border: var(--qtyBorder);
   font-size: 2rem;
   color: var(--black);
 }
