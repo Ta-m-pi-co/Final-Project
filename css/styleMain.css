@@ -65,6 +65,12 @@ section {
   text-transform: uppercase;
 }
 
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  opacity: .5;
+}
+
 .empty {
   border: var(--border);
   border-radius: 0.5rem;
@@ -639,7 +645,24 @@ top: 7rem;
 .products .boxContainer .box:hover .fa-heart {
   top: 1rem;
   }
-
+.products .totalPrice {
+  margin-top: 2rem;
+  max-width: 50rem;
+  background-color: white;
+  border: var(--border);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+}
+.products .totalPrice p{
+  font-size: 2.5rem;
+  color: var(--light-color);
+}
+.products .totalPrice p span{
+  color: var(--red);
+  margin-bottom: 2rem;
+}
 /*wishlist*/
 .wishlist .boxContainer{
   display: grid;
@@ -649,6 +672,24 @@ top: 7rem;
   justify-content: center;
 }
 
+.wishlist .totalPrice {
+  margin-top: 2rem;
+  max-width: 50rem;
+  background-color: white;
+  border: var(--border);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+}
+.wishlist .totalPrice p{
+  font-size: 2.5rem;
+  color: var(--light-color);
+}
+.wishlist .totalPrice p span{
+  color: var(--red);
+  margin-bottom: 2rem;
+}
 .wishlist .boxContainer .box{
   background-color: var(--white);
   border-radius: .5rem;
