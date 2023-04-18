@@ -9,6 +9,8 @@ if (isset($_SESSION['userID'])) {
   $userID = $_SESSION['userID'];
 } else {
   $userID = '';
+
+  header('location:userLogin.php');
 }
 
 include '../components/wishlistBasket.php';

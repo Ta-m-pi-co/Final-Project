@@ -9,7 +9,7 @@ if (isset($_SESSION['userID'])) {
   $userID = $_SESSION['userID'];
 } else {
   $userID = '';
-  header('location:home.php');
+  header('location:userRegister.php');
 }
 include '../components/wishlistBasket.php';
 
