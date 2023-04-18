@@ -36,7 +36,7 @@ if (isset($_POST['order'])) {
     $message[] = 'order placed';
 
     $deleteBasket = $conn->prepare("DELETE FROM `cart` WHERE userID = ?");
-    $deleteBasket->execute([$userID])
+    $deleteBasket->execute([$userID]);
   } else {
     $message[] = 'the basket is empty';
   }
