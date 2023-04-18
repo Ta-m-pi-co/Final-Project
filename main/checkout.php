@@ -111,7 +111,7 @@ if (isset($_SESSION['userID'])) {
           $basketItems[] = $fetchBasket['name'] . ' (' . $fetchBasket['qty'] . ') -';
           $totalProducts = implode($basketItems);
       ?>
-          <p> <?= $fetchBasket['name']; ?> <span>£<?= $fetchBasket['price']; ?>/- x <?= $fetchBasket['qty'] ?> </span></p>
+          <p> <?= $fetchBasket['name']; ?> <span>£<?= $fetchBasket['price']; ?> x<?= $fetchBasket['qty'] ?> </span></p>
 
 
       <?php
@@ -125,8 +125,6 @@ if (isset($_SESSION['userID'])) {
 
 
     </div>
-
-
     <p class="totalPrice">Grand Total : £<span><?= $totalPrice; ?></span></p>
   </section>
 
