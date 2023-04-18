@@ -89,7 +89,7 @@ if (isset($_POST['order'])) {
 
           while ($fetchBasket = $selectBasket->fetch(PDO::FETCH_ASSOC)) {
             $totalPrice += ($fetchBasket['price'] * $fetchBasket['qty']);
-            $basketItems[] = $fetchBasket['name'] . ' (' . $fetchBasket['qty'] . ') -';
+            $basketItems[] = $fetchBasket['name'] . ' (' . $fetchBasket['qty'] . ') /';
             $totalProducts = implode($basketItems);
         ?>
             <p> <?= $fetchBasket['name']; ?> <span>£<?= $fetchBasket['price']; ?> x<?= $fetchBasket['qty'] ?> </span></p>
