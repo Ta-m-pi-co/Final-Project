@@ -1135,10 +1135,13 @@ color: var(--black);
   text-align: center;
   font-size: 2.5rem;
   color: var(--light-color);
+  text-transform: uppercase;
+  background-color: white;
+  box-shadow: var(--box-shadow);
 }
 
 .checkout .totalPrice span{
-color: green;
+  color:green;
 }
 
 .checkout form{
