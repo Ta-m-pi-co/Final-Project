@@ -11,7 +11,7 @@ if (isset($_SESSION['userID'])) {
   $userID = '';
 }
 
-include '../components/wishlistBasket.php'
+include '../components/wishlistBasket.php';
 
 ?>
 
