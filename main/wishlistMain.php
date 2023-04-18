@@ -54,14 +54,14 @@ if (isset($_GET['deleteAll'])) {
 
     <div class="boxContainer">
       <?php
-      $TotalPrice = 0;
+      $totalPrice = 0;
       $selectWishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE userID = ?");
       $selectWishlist->execute([$userID]);
 
       if ($selectWishlist->rowCount() > 0) {
 
         while ($fetchWishlist = $selectWishlist->fetch(PDO::FETCH_ASSOC)) {
-          $TotalPrice += $fetchWishlist['price'];
+          $totalPrice += $fetchWishlist['price'];
 
       ?>
 
@@ -98,9 +98,9 @@ if (isset($_GET['deleteAll'])) {
 
 
     <div class="totalPrice">
-      <p>Grand Total : £<span><?= $TotalPrice; ?></span></p>
+      <p>Grand Total : £<span><?= $totalPrice; ?></span></p>
       <a href="store.php" class="optionBtn">Continue Shopping?</a>
-      <a href="wishlistMain.php?deleteAll" class="deleteBtn <?= ($TotalPrice > 1) ? '' : 'disabled'; ?>" onclick="return confirm('Are you sure you want to remove everything?')">Remove All Wishlist Items?</a>
+      <a href="wishlistMain.php?deleteAll" class="deleteBtn <?= ($totalPrice > 1) ? '' : 'disabled'; ?>" onclick="return confirm('Are you sure you want to remove everything?')">Remove All Wishlist Items?</a>
     </div>
   </section>
 

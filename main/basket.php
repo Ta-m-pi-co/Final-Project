@@ -65,7 +65,7 @@ if (isset($_POST['updateQty'])) {
 
     <div class="boxContainer">
       <?php
-      $TotalPrice = 0;
+      $totalPrice = 0;
       $selectBasket = $conn->prepare("SELECT * FROM `cart` WHERE userID = ?");
       $selectBasket->execute([$userID]);
 
@@ -98,7 +98,7 @@ if (isset($_POST['updateQty'])) {
 
 
       <?php
-          $TotalPrice += $subTotal;
+          $totalPrice += $subTotal;
         }
       } else {
         echo '<p class="empty">Nothing in Basket. </p>';
@@ -109,10 +109,10 @@ if (isset($_POST['updateQty'])) {
 
 
     <div class="totalPrice">
-      <p>Grand Total : £<span><?= $TotalPrice; ?></span></p>
+      <p>Grand Total : £<span><?= $totalPrice; ?></span></p>
       <a href="store.php" class="optionBtn">Continue Shopping?</a>
-      <a href="basket.php?deleteAll" class="deleteBtn <?= ($TotalPrice > 1) ? '' : 'disabled'; ?>" onclick="return confirm('Are you sure you want to remove everything?')">Remove Everything From Basket?</a>
-      <a href="checkout.php" class="btn <?= ($TotalPrice > 1) ? '' : 'disabled'; ?>">Checkout</a>
+      <a href="basket.php?deleteAll" class="deleteBtn <?= ($totalPrice > 1) ? '' : 'disabled'; ?>" onclick="return confirm('Are you sure you want to remove everything?')">Remove Everything From Basket?</a>
+      <a href="checkout.php" class="btn <?= ($totalPrice > 1) ? '' : 'disabled'; ?>">Checkout</a>
     </div>
   </section>
 

@@ -1146,6 +1146,7 @@ color: green;
   border-radius: .5rem;
   box-shadow: var(--box-shadow);
   background-color: white;
+  border:0.2rem;
 }
 
 .checkout form .flex {

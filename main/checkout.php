@@ -100,7 +100,7 @@ if (isset($_SESSION['userID'])) {
       <?php
       $basketItems[] = '';
 
-      $TotalPrice = 0;
+      $totalPrice = 0;
       $selectBasket = $conn->prepare("SELECT * FROM `cart` WHERE userID = ?");
       $selectBasket->execute([$userID]);
 
@@ -127,7 +127,7 @@ if (isset($_SESSION['userID'])) {
     </div>
 
 
-    <p class="totalPrice">Grand Total : £<span><?= $TotalPrice; ?></span></p>
+    <p class="totalPrice">Grand Total : £<span><?= $totalPrice; ?></span></p>
   </section>
 
 
