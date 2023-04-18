@@ -78,7 +78,7 @@ if (isset($_GET['deleteAll'])) {
             <a href="itemView.php?productID=<?= $fetchWishlist['productID']; ?>"><img src="../images/<?= $fetchWishlist['image']; ?>" alt="" class="image"></a>
             <div class="name"><?= $fetchWishlist['name']; ?></div>
             <div class="flex">
-              <div class="price">£<?= $fetchWishlist['price']; ?></div>
+              <div class="price">£<?= $fetchWishlist['price']; ?>/-</div>
               <input type="number" name="qty" class="qty" min="1" max="99" value="1" onkeypress="if(this.value.length == 2) return false">
             </div>
             <input type="submit" value="add to basket" name="addToBasket" class="btn">
@@ -98,7 +98,7 @@ if (isset($_GET['deleteAll'])) {
 
 
     <div class="totalPrice">
-      <p>Grand Total : <span><?= $TotalPrice; ?></span></p>
+      <p>Grand Total : £<span><?= $TotalPrice; ?></span></p>
       <a href="store.php" class="optionBtn">Continue Shopping?</a>
       <a href="wishlistMain.php?deleteAll" class="deleteBtn <?= ($TotalPrice > 1) ? '' : 'disabled'; ?>" onclick="return confirm('Are you sure you want to remove everything?')">Remove All Wishlist Items?</a>
     </div>

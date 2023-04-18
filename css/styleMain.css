@@ -646,6 +646,7 @@ top: 7rem;
   top: 1rem;
   }
 .products .totalPrice {
+  margin: 0 auto;
   margin-top: 2rem;
   max-width: 50rem;
   background-color: white;
@@ -673,6 +674,7 @@ top: 7rem;
 }
 
 .wishlist .totalPrice {
+  margin: 0 auto;
   margin-top: 2rem;
   max-width: 50rem;
   background-color: white;
