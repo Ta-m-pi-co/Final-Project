@@ -34,10 +34,12 @@ if (isset($_POST['order'])) {
   if ($checkBasket->rowCount() > 0) {
     $insertOrder = $conn->prepare("INSERT INTO `orders`(userID, name, telephone, email, method, address, totalProducts, totalPrice) VALUES(?,?,?,?,?,?,?,?)");
     $insertOrder->execute([$userID, $name, $telephone, $email, $method, $address, $totalProducts, $totalPrice]);
-    $message[] = 'order placed';
+
 
     $deleteBasket = $conn->prepare("DELETE FROM `cart` WHERE userID = ?");
     $deleteBasket->execute([$userID]);
+
+    $message[] = 'order placed';
   } else {
     $message[] = 'the basket is empty';
   }
@@ -73,6 +75,38 @@ if (isset($_POST['order'])) {
 
 
     <form action="" method="post">
+      <h1 class="heading">Basket</h1>
+      <div class="displayOrders">
+
+        <?php
+        $basketItems[] = '';
+
+        $totalPrice = 0;
+        $selectBasket = $conn->prepare("SELECT * FROM `cart` WHERE userID = ?");
+        $selectBasket->execute([$userID]);
+
+        if ($selectBasket->rowCount() > 0) {
+
+          while ($fetchBasket = $selectBasket->fetch(PDO::FETCH_ASSOC)) {
+            $totalPrice += ($fetchBasket['price'] * $fetchBasket['qty']);
+            $basketItems[] = $fetchBasket['name'] . ' (' . $fetchBasket['qty'] . ') -';
+            $totalProducts = implode($basketItems);
+        ?>
+            <p> <?= $fetchBasket['name']; ?> <span>£<?= $fetchBasket['price']; ?> x<?= $fetchBasket['qty'] ?> </span></p>
+
+
+        <?php
+
+          }
+        } else {
+          echo '<p class="empty">Nothing in Basket. </p>';
+        }
+        ?>
+
+
+
+      </div>
+      <p class="totalPrice">Grand Total : £<span><?= $totalPrice; ?></span></p>
       <h1 class="heading">Checkout Details</h1>
       <input type="hidden" name="totalProducts" value="<?= $totalProducts; ?>">
       <input type="hidden" name="totalPrice" value="<?= $totalPrice; ?>">
@@ -126,38 +160,7 @@ if (isset($_POST['order'])) {
       <input type="submit" value="place order" class="btn" name="order">
     </form>
 
-    <h1 class="heading">Basket</h1>
-    <div class="displayOrders">
 
-      <?php
-      $basketItems[] = '';
-
-      $totalPrice = 0;
-      $selectBasket = $conn->prepare("SELECT * FROM `cart` WHERE userID = ?");
-      $selectBasket->execute([$userID]);
-
-      if ($selectBasket->rowCount() > 0) {
-
-        while ($fetchBasket = $selectBasket->fetch(PDO::FETCH_ASSOC)) {
-          $totalPrice += ($fetchBasket['price'] * $fetchBasket['qty']);
-          $basketItems[] = $fetchBasket['name'] . ' (' . $fetchBasket['qty'] . ') -';
-          $totalProducts = implode($basketItems);
-      ?>
-          <p> <?= $fetchBasket['name']; ?> <span>£<?= $fetchBasket['price']; ?> x<?= $fetchBasket['qty'] ?> </span></p>
-
-
-      <?php
-
-        }
-      } else {
-        echo '<p class="empty">Nothing in Basket. </p>';
-      }
-      ?>
-
-
-
-    </div>
-    <p class="totalPrice">Grand Total : £<span><?= $totalPrice; ?></span></p>
   </section>
 
 
