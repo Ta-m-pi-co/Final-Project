@@ -77,7 +77,7 @@ if (isset($_POST['updateQty'])) {
 
           <form action="" method="post" class="box">
 
-
+            <input type="hidden" name="basketId" value="<?= $fetchBasket['id']; ?>">
 
             <a href="itemView.php?productID=<?= $fetchBasket['productID']; ?>" class="fas fa-eye"></a>
 
@@ -91,7 +91,7 @@ if (isset($_POST['updateQty'])) {
               <button type="submit" class="fas fa-pencil" name="updateQty"></button>
             </div>
             <div class="subTotal">Sub-Total: £<span><?= $subTotal = $fetchBasket['price'] * $fetchBasket['qty'] ?>/-</span></div>
-            
+
             <input type="submit" value="Remove From Basket?" name="delete" class="deleteBtn">
           </form>
 
