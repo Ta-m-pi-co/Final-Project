@@ -801,7 +801,35 @@ color: var(--black);
   height: 20rem;
 }
 
+/*search page*/
 
+.searchForm form {
+  display: flex;
+  gap : 1rem;
+}
+
+.searchForm form .box {
+  padding: 1.4rem;
+  font-size:1.8rem;
+  color: var(--black);
+  border: var(--border);
+  box-shadow: var(--border);
+  background-color: white;
+  border-radius: .5rem;
+  width: 100%;
+}
+
+.searchForm form .fa-search{
+  width: 4rem;
+  font-size: 2.5rem;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: .5rem;
+}
+
+.searchForm form .fa-search:hover{
+  background-color: green;
+}
 /* media queries */
 
 @media (max-width: 991px) {
