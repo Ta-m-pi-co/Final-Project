@@ -36,14 +36,14 @@ if (isset($_POST['submit'])) {
   //$fetchpPassword = $selectOPassword->fetch(PDO::FETCH_ASSOC);
 
   $pPassword = $_POST['pPassword'];
-
-  $oPassword = sha1($_POST['oPassword']);
+ 
+  $oPassword = password_hash($_POST['oPassword'], PASSWORD_DEFAULT);
   $oPassword = filter_var($oPassword, FILTER_SANITIZE_STRING);
 
-  $nPassword = sha1($_POST['nPassword']);
+  $nPassword = password_hash($_POST['nPassword'], PASSWORD_DEFAULT);
   $nPassword = filter_var($nPassword, FILTER_SANITIZE_STRING);
 
-  $confirmNPassword = sha1($_POST['confirmNPassword']);
+  $confirmNPassword = password_hash($_POST['confirmNPassword'], PASSWORD_DEFAULT);
   $confirmNPassword = filter_var($confirmNPassword, FILTER_SANITIZE_STRING);
 
   if ($oPassword == $empty_pass) {
