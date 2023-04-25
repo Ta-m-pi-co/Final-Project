@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $email = filter_var($email, FILTER_SANITIZE_STRING);
 
-  $password = $_POST['password'];
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
   $selectHashPass = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
