@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 
   $user = $selectHashPass->fetch();
 
-  $verifyPass = password_verify($password, $selectHashPass);
+  // $verifyPass = password_verify($password, $selectHashPass);
   //password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   $selectUser = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
