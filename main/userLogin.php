@@ -19,7 +19,9 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-  $verifyPass = password_verify($_POST['password'], $userID);
+  $selectHashPass = $conn->prepare("SELECT 'password' FROM `users` WHERE email = ?");
+
+  $verifyPass = password_verify($password, $selectHashPass);
   //password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   $selectUser = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
