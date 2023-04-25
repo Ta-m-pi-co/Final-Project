@@ -19,11 +19,11 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-  //$selectHashPass = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-  // $selectHashPass->bindParam(1, $email);
-  // $selectHashPass->execute();
+  $selectHashPass = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+   $selectHashPass->bindParam(1, $email);
+  $selectHashPass->execute();
 
-  //$user = $selectUser->fetch(PDO::FETCH_ASSOC);
+  $user = $selectUser->fetch(PDO::FETCH_ASSOC);
 
   // $verifyPass = password_verify($password, $selectHashPass);
   //password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -32,13 +32,26 @@ if (isset($_POST['submit'])) {
   $selectUser->execute([$email, $password]);
   $row = $selectUser->fetch(PDO::FETCH_ASSOC);
 
-  if (password_verify($password, $row['password']) && $selectUser->rowCount() > 0) {
+if(password_verify($password, $user['password'])){
+  if($selectUser->rowCount() > 0){
     $_SESSION['userID'] = $row['id'];
     header('location:home.php');
-  } else {
+  } else{
     $message[] = 'Incorrect email or Password! Try Again.';
   }
+  
+} else{
+  $message[] = 'error';
 }
+
+
+ // if (password_verify($password, $user['password']) && $selectUser->rowCount() > 0) {
+//    $_SESSION['userID'] = $row['id'];
+//    header('location:home.php');
+//  } else {
+ //   $message[] = 'Incorrect email or Password! Try Again.';
+//  }
+//}
 ?>
 
 
