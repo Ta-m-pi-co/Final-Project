@@ -19,17 +19,20 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-  $selectHashPass = $conn->prepare("SELECT 'password' FROM `users` WHERE email = ?");
-  $selectHashPass->execute([$email, $password]);
+  $selectHashPass = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+  $selectHashPass->bindParam(1, $email);
+  $selectHashPass->execute();
+
+  $user = $selectHashPass->fetch();
 
   $verifyPass = password_verify($password, $selectHashPass);
   //password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   $selectUser = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-  $selectUser->execute([$email, $verifyPass]);
+  $selectUser->execute([$email, $password]);
   $row = $selectUser->fetch(PDO::FETCH_ASSOC);
 
-  if ($selectUser->rowCount() > 0) {
+  if ($selectUser->rowCount() > 0 && password_verify($password, $user['password'])) {
     $_SESSION['userID'] = $row['id'];
     header('location:home.php');
   } else {
