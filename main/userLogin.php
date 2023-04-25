@@ -19,15 +19,6 @@ if (isset($_POST['submit'])) {
   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-  $selectHashPass = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-   $selectHashPass->bindParam(1, $email);
-  $selectHashPass->execute();
-
-  $user = $selectHashPass->fetch(PDO::FETCH_ASSOC);
-
-  // $verifyPass = password_verify($password, $selectHashPass);
-  //password_hash($_POST['password'], PASSWORD_DEFAULT);
-
   $selectUser = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
   $selectUser->execute([$email, $password]);
   $row = $selectUser->fetch(PDO::FETCH_ASSOC);
