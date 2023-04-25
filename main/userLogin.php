@@ -16,11 +16,14 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $email = filter_var($email, FILTER_SANITIZE_STRING);
 
-  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+  $password = $_POST['password'];
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
+  $verifyPass = password_verify($_POST['password'], $userID);
+  //password_hash($_POST['password'], PASSWORD_DEFAULT);
+
   $selectUser = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-  $selectUser->execute([$email, $password]);
+  $selectUser->execute([$email, $verifyPass]);
   $row = $selectUser->fetch(PDO::FETCH_ASSOC);
 
   if ($selectUser->rowCount() > 0) {
