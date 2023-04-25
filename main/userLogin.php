@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
   $selectHashPass->bindParam(1, $email);
   $selectHashPass->execute();
 
-  $user = $selectHashPass->fetch();
+  $user = $selectHashPass->fetch(PDO::FETCH_ASSOC);
 
   // $verifyPass = password_verify($password, $selectHashPass);
   //password_hash($_POST['password'], PASSWORD_DEFAULT);
