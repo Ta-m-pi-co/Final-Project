@@ -51,7 +51,7 @@ if(password_verify($password, $user['password'])){
 //  } else {
  //   $message[] = 'Incorrect email or Password! Try Again.';
 //  }
-//}
+}
 ?>
 
 
