@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
   $password = filter_var($password, FILTER_SANITIZE_STRING);
 
   $selectHashPass = $conn->prepare("SELECT 'password' FROM `users` WHERE email = ?");
+  $selectHashPass->execute([$email, $password]);
 
   $verifyPass = password_verify($password, $selectHashPass);
   //password_hash($_POST['password'], PASSWORD_DEFAULT);
