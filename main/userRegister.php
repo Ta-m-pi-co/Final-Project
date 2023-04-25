@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
   $confirmPassword = sha1($_POST['confirmPassword']);
   $confirmPassword = filter_var($confirmPassword, FILTER_SANITIZE_STRING);
 
-  $hashPash = password_hash($_POST['confirmPassword'], PASSWORD_DEFAULT);
+
 
   $email = $_POST['email'];
   $email = filter_var($email, FILTER_SANITIZE_STRING);
@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
     } else {
       $insertUser = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
 
-      $insertUser->execute([$name, $email, $hashPash]);
+      $insertUser->execute([$name, $email, $confirmPassword]);
 
       $message[] = 'Welcome to Crowns';
     }

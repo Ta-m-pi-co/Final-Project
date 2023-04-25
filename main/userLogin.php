@@ -23,25 +23,14 @@ if (isset($_POST['submit'])) {
   $selectUser->execute([$email, $password]);
   $row = $selectUser->fetch(PDO::FETCH_ASSOC);
 
-if(password_verify($password, $user['password'])){
-  if($selectUser->rowCount() > 0){
-    $_SESSION['userID'] = $row['id'];
+
+
+  if ($selectUser->rowCount() > 0) {
+   $_SESSION['userID'] = $row['id'];
     header('location:home.php');
-  } else{
+  } else {
     $message[] = 'Incorrect email or Password! Try Again.';
   }
-  
-} else{
-  $message[] = 'error';
-}
-
-
- // if (password_verify($password, $user['password']) && $selectUser->rowCount() > 0) {
-//    $_SESSION['userID'] = $row['id'];
-//    header('location:home.php');
-//  } else {
- //   $message[] = 'Incorrect email or Password! Try Again.';
-//  }
 }
 ?>
 
