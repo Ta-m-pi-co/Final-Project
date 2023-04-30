@@ -3,11 +3,14 @@ include '../components/connect.php';
 
 session_start();
 
-$admin_id = $_SESSION['admin_id'];
+if (isset($_SESSION['admin_id'])) {
 
-if (!isset($admin_id)) {
+  $admin_id = $_SESSION['admin_id'];
+} else {
+  $admin_id = '';
   header('location:admin_login.php');
-}
+};
+
 if (isset($_GET['delete'])) {
 
   $deleteId = $_GET['delete'];
@@ -34,7 +37,7 @@ if (isset($_GET['delete'])) {
 </head>
 
 <body>
-<?php include '../components/headerAdmin.php'; ?>
+  <?php include '../components/headerAdmin.php'; ?>
   <section class="messages">
 
     <h1 class="heading">Messages</h1>

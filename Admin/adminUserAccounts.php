@@ -3,11 +3,13 @@ include '../components/connect.php';
 
 session_start();
 
-$admin_id = $_SESSION['admin_id'];
+if (isset($_SESSION['admin_id'])) {
 
-if (!isset($admin_id)) {
+  $admin_id = $_SESSION['admin_id'];
+} else {
+  $admin_id = '';
   header('location:admin_login.php');
-}
+};
 
 if (isset($_GET['delete'])) {
 
@@ -53,25 +55,25 @@ if (isset($_GET['delete'])) {
       $selectAccount->execute();
       if ($selectAccount->rowCount() > 0) {
         while ($fetchAccounts = $selectAccount->fetch(PDO::FETCH_ASSOC)) {
-        
+
 
       ?>
-        <div class="box">
-          <p>ID: <span><?= $fetchAccounts['id']; ?></span> </p>
-          <p>Admin Username: <span><?= $fetchAccounts['name']; ?></span> </p>
-          <div class="flexBtn">
-            <a href="adminUserAccounts.php?delete=<?= $fetchAccounts['id']; ?>" class="deleteBtn" onclick="return confirm('delete this?')">Delete</a>
+          <div class="box">
+            <p>ID: <span><?= $fetchAccounts['id']; ?></span> </p>
+            <p>Admin Username: <span><?= $fetchAccounts['name']; ?></span> </p>
+            <div class="flexBtn">
+              <a href="adminUserAccounts.php?delete=<?= $fetchAccounts['id']; ?>" class="deleteBtn" onclick="return confirm('delete this?')">Delete</a>
 
-            <?php
-            if ($fetchAccounts['id'] == $admin_id) {
-              echo '<a href="updateProfile.php" class="optionBtn">Update</a>';
-            }
+              <?php
+              if ($fetchAccounts['id'] == $admin_id) {
+                echo '<a href="updateProfile.php" class="optionBtn">Update</a>';
+              }
 
 
-            ?>
+              ?>
+            </div>
+
           </div>
-
-        </div>
       <?php
         }
       } else {
