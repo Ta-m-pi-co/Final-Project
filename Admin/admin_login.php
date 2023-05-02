@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
   <meta name="viewport" content="width=, initial-scale=1.0">
   <title>login</title>
   <!-- font awesome cdn link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
   <!-- admin css file-->
   <link rel="stylesheet" href="../css/styleAdmin.css">
